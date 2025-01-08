@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerCtrl : MonoBehaviour
 {
 
-    public float movSpeed;
+    public float moveSpeed;
     float speedX, speedY;
     Rigidbody2D rb;
     // Start is called before the first frame update
@@ -20,6 +20,6 @@ public class PlayerCtrl : MonoBehaviour
     {
         speedX = Input.GetAxis("Horizontal");
         speedY = Input.GetAxis("Vertical");
-        rb.velocity = new Vector2(speedX * movSpeed, speedY * movSpeed);
+        rb.velocity = new Vector2(speedX * moveSpeed, speedY * moveSpeed);
     }
 }
