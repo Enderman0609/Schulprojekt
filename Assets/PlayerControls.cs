@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class PlayerCtrl : MonoBehaviour
 {
-
+    private Animator animator;
     public float moveSpeed;
     float speedX, speedY;
     Rigidbody2D rb;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();  
@@ -21,5 +25,7 @@ public class PlayerCtrl : MonoBehaviour
         speedX = Input.GetAxis("Horizontal");
         speedY = Input.GetAxis("Vertical");
         rb.velocity = new Vector2(speedX * moveSpeed, speedY * moveSpeed);
+        animator.SetFloat("moveX", input.x);
+        animator.SetFloat("moveY", input.y);
     }
 }
