@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d64fdee322d99594386840d1d5369625
+guid: 743539d240e02d84782fb730d0cac861
 AssetOrigin:
   serializedVersion: 1
   productId: 295726
@@ -130,54 +130,10 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player_0
+      name: Gespiegerlterspieler_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 775
-        width: 13
-        height: 19
-      alignment: 9
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f0b6ddbce77d5e94083f0a3ab724be51
-      internalID: 1209683134
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_1
-      rect:
-        serializedVersion: 2
-        x: 38
-        y: 775
-        width: 13
-        height: 19
-      alignment: 9
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 227776ceb4f4740478430198ec89a60c
-      internalID: -2017810120
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_2
-      rect:
-        serializedVersion: 2
-        x: 70
+        x: 9
         y: 775
         width: 13
         height: 20
@@ -189,17 +145,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c98140d83bb062a45b16131674d78616
-      internalID: 945967015
+      spriteID: 0e147f7696128624b8ec4a5151be3405
+      internalID: 948696179
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_3
+      name: Gespiegerlterspieler_1
       rect:
         serializedVersion: 2
-        x: 102
+        x: 41
         y: 775
         width: 13
         height: 20
@@ -211,18 +167,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93a66a6f6cf226e40a3a233cdc01b391
-      internalID: -1075375502
+      spriteID: 3eca2e36a12e81f43aafaa7143653f14
+      internalID: -2035743322
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_4
+      name: Gespiegerlterspieler_2
       rect:
         serializedVersion: 2
-        x: 5
-        y: 743
+        x: 73
+        y: 775
         width: 13
         height: 19
       alignment: 9
@@ -233,18 +189,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cda6f47b40eb8a64fad70a76fcaffff5
-      internalID: 594003081
+      spriteID: 49ee8296447b0f64c816bcfdab40b356
+      internalID: 254643558
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_5
+      name: Gespiegerlterspieler_3
       rect:
         serializedVersion: 2
-        x: 37
-        y: 743
+        x: 105
+        y: 775
         width: 13
         height: 19
       alignment: 9
@@ -255,39 +211,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a103f434b9a6bc4dbdc970ee979397d
-      internalID: 1648004246
+      spriteID: fd620de530a27694980bce79d52a9967
+      internalID: 1445971864
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_6
+      name: Gespiegerlterspieler_4
       rect:
         serializedVersion: 2
-        x: 69
-        y: 743
-        width: 13
-        height: 20
-      alignment: 9
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9c39a784bc6def14eb49c80073548f03
-      internalID: -1458547266
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_7
-      rect:
-        serializedVersion: 2
-        x: 101
+        x: 10
         y: 743
         width: 13
         height: 20
@@ -299,18 +233,40 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b78efcec843d8ae45b968d1b6dc82674
-      internalID: -930787914
+      spriteID: 6c589dc4042a4d94487c3538d3536b37
+      internalID: 482523383
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_8
+      name: Gespiegerlterspieler_5
       rect:
         serializedVersion: 2
-        x: 6
-        y: 711
+        x: 42
+        y: 743
+        width: 13
+        height: 20
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cbd60c2d28109940904b392caa76497
+      internalID: -1263136348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gespiegerlterspieler_6
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 743
         width: 13
         height: 19
       alignment: 9
@@ -321,18 +277,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd7af830808a8704cbbf715e717a9e51
-      internalID: 1910472571
+      spriteID: 4ef892be6bd9d8f47b3ea4d3164a24f1
+      internalID: 1115382344
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_9
+      name: Gespiegerlterspieler_7
       rect:
         serializedVersion: 2
-        x: 38
-        y: 711
+        x: 106
+        y: 743
         width: 13
         height: 19
       alignment: 9
@@ -343,17 +299,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 628d41d936c68894c95f78f13e6ac224
-      internalID: -580332026
+      spriteID: 890246a185d8b144e907f112c0daf667
+      internalID: 898737130
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_10
+      name: Gespiegerlterspieler_8
       rect:
         serializedVersion: 2
-        x: 70
+        x: 9
         y: 711
         width: 13
         height: 20
@@ -365,17 +321,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 352b74ce6b2b0f748b852c2da061d6fc
-      internalID: 1441832348
+      spriteID: 4075c5bf7f2e9c84f91dad2d7d145a23
+      internalID: -306895537
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_11
+      name: Gespiegerlterspieler_9
       rect:
         serializedVersion: 2
-        x: 102
+        x: 41
         y: 711
         width: 13
         height: 20
@@ -387,17 +343,61 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d749f03e92477d4395daecb3ff15492
-      internalID: 1169929480
+      spriteID: 6b2570de417352d49b3cde438ed83536
+      internalID: 908886711
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_12
+      name: Gespiegerlterspieler_10
       rect:
         serializedVersion: 2
-        x: 6
+        x: 73
+        y: 711
+        width: 13
+        height: 19
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1d045c7a7c87a24782481a43e789e69
+      internalID: 1503749571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gespiegerlterspieler_11
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 711
+        width: 13
+        height: 19
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93b81f19b26c26047a7f9c3fdc9882a3
+      internalID: -1346425264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gespiegerlterspieler_12
+      rect:
+        serializedVersion: 2
+        x: 9
         y: 679
         width: 13
         height: 22
@@ -409,39 +409,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28bc58e71154a58438f33ee18ce6aaf1
-      internalID: 270692003
+      spriteID: 2ca6be02b726c2848931772fd670bd32
+      internalID: 1605961564
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_13
+      name: Gespiegerlterspieler_13
       rect:
         serializedVersion: 2
-        x: 38
-        y: 679
-        width: 13
-        height: 20
-      alignment: 9
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b46fd6a697a072a4f8e37379440c31fb
-      internalID: 1491945574
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_14
-      rect:
-        serializedVersion: 2
-        x: 70
+        x: 41
         y: 679
         width: 13
         height: 21
@@ -453,17 +431,39 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3ead11171b77804c88f0b10ce736d5a
-      internalID: 1404577210
+      spriteID: 75ddbb1266b50594bbfe28d222cfa312
+      internalID: -1916119864
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_15
+      name: Gespiegerlterspieler_14
       rect:
         serializedVersion: 2
-        x: 102
+        x: 73
+        y: 679
+        width: 13
+        height: 20
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78056ec8f35d3c5499ce5bb6e921ec70
+      internalID: -613350601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gespiegerlterspieler_15
+      rect:
+        serializedVersion: 2
+        x: 105
         y: 679
         width: 13
         height: 22
@@ -475,17 +475,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2cb3492b93965a4fb721075803e9c1d
-      internalID: 1183630270
+      spriteID: cfb14d469da7a99499e7386db21dce3b
+      internalID: 920495171
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_16
+      name: Gespiegerlterspieler_16
       rect:
         serializedVersion: 2
-        x: 5
+        x: 10
         y: 647
         width: 13
         height: 22
@@ -497,39 +497,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78d91d843eb2d2848aa36eabc5291aa8
-      internalID: 1271195366
+      spriteID: 112805c5a0eb6e64482ff1e8946d2dd2
+      internalID: -698185622
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_17
+      name: Gespiegerlterspieler_17
       rect:
         serializedVersion: 2
-        x: 37
-        y: 647
-        width: 13
-        height: 20
-      alignment: 9
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ea8203152d7bfd84db17c1d260350566
-      internalID: -803799522
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_18
-      rect:
-        serializedVersion: 2
-        x: 69
+        x: 42
         y: 647
         width: 13
         height: 21
@@ -541,17 +519,39 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d622eb20274ba2945ae3c5056084bea0
-      internalID: 2123659199
+      spriteID: 502461c0224735b40943371913148e5b
+      internalID: 1515006490
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_19
+      name: Gespiegerlterspieler_18
       rect:
         serializedVersion: 2
-        x: 101
+        x: 74
+        y: 647
+        width: 13
+        height: 20
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1a588dc83e34d149b7e2370ccc79851
+      internalID: -1972013738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gespiegerlterspieler_19
+      rect:
+        serializedVersion: 2
+        x: 106
         y: 647
         width: 13
         height: 22
@@ -563,17 +563,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a933b8973ed3591488d44cc5a4d45c0a
-      internalID: 1363234804
+      spriteID: cd36689c196a5f5459a36d25f9ea619c
+      internalID: -1031779197
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_20
+      name: Gespiegerlterspieler_20
       rect:
         serializedVersion: 2
-        x: 6
+        x: 9
         y: 615
         width: 13
         height: 22
@@ -585,39 +585,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03ea1b89c560aee4ea1e5a9dd5d086e8
-      internalID: -1727629746
+      spriteID: 67d62d636819e2e4c9666cc820c3d9b4
+      internalID: -2056259914
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_21
+      name: Gespiegerlterspieler_21
       rect:
         serializedVersion: 2
-        x: 38
-        y: 615
-        width: 13
-        height: 20
-      alignment: 9
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0d8f6465562bdf24e84a1b920dd5c499
-      internalID: -540151525
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_22
-      rect:
-        serializedVersion: 2
-        x: 70
+        x: 41
         y: 615
         width: 13
         height: 21
@@ -629,17 +607,39 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 015397790fb0c824ea1cf4085b8eee24
-      internalID: -290494033
+      spriteID: 58a099dada3378142a83c34a65fc1fab
+      internalID: -1767562608
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_23
+      name: Gespiegerlterspieler_22
       rect:
         serializedVersion: 2
-        x: 102
+        x: 73
+        y: 615
+        width: 13
+        height: 20
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84aff6594142876459d62f848d5d23a9
+      internalID: -1084535267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gespiegerlterspieler_23
+      rect:
+        serializedVersion: 2
+        x: 105
         y: 615
         width: 13
         height: 22
@@ -651,20 +651,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce84657a033e33a428ca2dcf2b68ab5d
-      internalID: 505823599
+      spriteID: ee6a519a60f05914db3aeff400d3a77e
+      internalID: 1541244169
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_24
+      name: Gespiegerlterspieler_24
       rect:
         serializedVersion: 2
         x: 6
         y: 583
-        width: 13
-        height: 20
+        width: 16
+        height: 19
       alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -673,61 +673,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24dc2d68c5c92054cb47111a850f6120
-      internalID: 1763807599
+      spriteID: 4e4c0dc29ea5148429ece3931d02968b
+      internalID: -1295083874
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_25
+      name: Gespiegerlterspieler_25
       rect:
         serializedVersion: 2
-        x: 31
-        y: 583
-        width: 6
-        height: 11
-      alignment: 9
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4f5882d26b6e25e4ab042fc3c49e7a3e
-      internalID: 418398445
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_26
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 583
-        width: 17
-        height: 20
-      alignment: 9
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b51283a3c65919c4fb3e907229df5be6
-      internalID: 1974771264
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_27
-      rect:
-        serializedVersion: 2
-        x: 60
+        x: 32
         y: 576
         width: 32
         height: 27
@@ -739,20 +695,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e012e4bf23bc8c24490ee65015f1d462
-      internalID: 1736743958
+      spriteID: 6efb02b05c71e254b9b04952743ce23b
+      internalID: 1036569251
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_28
+      name: Gespiegerlterspieler_26
       rect:
         serializedVersion: 2
-        x: 102
+        x: 73
         y: 583
-        width: 16
-        height: 19
+        width: 17
+        height: 20
       alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -761,18 +717,40 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b71ce7820d1c7f4584936b856034812
-      internalID: 825300524
+      spriteID: 9abffb302bb4eca408b23a80afcdc4e2
+      internalID: -1280153275
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_29
+      name: Gespiegerlterspieler_27
       rect:
         serializedVersion: 2
-        x: 6
-        y: 551
+        x: 87
+        y: 583
+        width: 6
+        height: 11
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e238722dbc810441958fabab538ff2e
+      internalID: -1512891896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gespiegerlterspieler_28
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 583
         width: 13
         height: 20
       alignment: 9
@@ -783,20 +761,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57d3bad6a8f09fb40a2005387446cddf
-      internalID: -657992852
+      spriteID: 8dbf16a5e93aa014c8b249e6adee0b83
+      internalID: -314433312
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_30
+      name: Gespiegerlterspieler_29
       rect:
         serializedVersion: 2
-        x: 38
+        x: 9
         y: 551
-        width: 19
-        height: 20
+        width: 16
+        height: 19
       alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -805,17 +783,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 820798d21015cd941b984d2acc71ded9
-      internalID: -2128822396
+      spriteID: 52246996e5009f347b5d46e5c1733e12
+      internalID: 926717992
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_31
+      name: Gespiegerlterspieler_30
       rect:
         serializedVersion: 2
-        x: 60
+        x: 32
         y: 544
         width: 32
         height: 27
@@ -827,20 +805,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9e86ed7a64112a44aa024cde8e38808
-      internalID: -1853515262
+      spriteID: f410f50dc6ddebc4e950eb61e169456e
+      internalID: 1765866887
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_32
+      name: Gespiegerlterspieler_31
       rect:
         serializedVersion: 2
-        x: 99
+        x: 67
         y: 551
-        width: 16
-        height: 19
+        width: 19
+        height: 20
       alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -849,18 +827,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ffb0aa05470676a42a7588c7a820ebfe
-      internalID: 328201571
+      spriteID: fcb507a4929f2b1408535fcd614efcbf
+      internalID: 1831695916
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_33
+      name: Gespiegerlterspieler_32
       rect:
         serializedVersion: 2
-        x: 6
-        y: 519
+        x: 105
+        y: 551
         width: 13
         height: 20
       alignment: 9
@@ -871,20 +849,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1db40c09fe9acae4abb86eed32e664a4
-      internalID: 1765431130
+      spriteID: 204d6b935800560479b4f4172782836a
+      internalID: 1704013894
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_34
+      name: Gespiegerlterspieler_33
       rect:
         serializedVersion: 2
-        x: 38
-        y: 514
-        width: 14
-        height: 25
+        x: 2
+        y: 519
+        width: 20
+        height: 19
       alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -893,17 +871,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a3ceb3787391ae4996277bb9881b508
-      internalID: 972740092
+      spriteID: 3bb36bfe70d8d224385b53c11b182d87
+      internalID: -429644410
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_35
+      name: Gespiegerlterspieler_34
       rect:
         serializedVersion: 2
-        x: 70
+        x: 34
         y: 513
         width: 20
         height: 26
@@ -915,20 +893,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3eeece6a5be6cd54b8fe31c7439fefc7
-      internalID: -406572348
+      spriteID: c10aa1505e6146247be0d16a4e96ca73
+      internalID: 1864088126
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_36
+      name: Gespiegerlterspieler_35
       rect:
         serializedVersion: 2
-        x: 102
-        y: 519
-        width: 20
-        height: 19
+        x: 72
+        y: 514
+        width: 14
+        height: 25
       alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -937,18 +915,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a479462167afa64b9dcbb4bf9c4d809
-      internalID: -1833786707
+      spriteID: f9168aa0aee0d6d4d9b334ec74d27e5f
+      internalID: 287106207
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_37
+      name: Gespiegerlterspieler_36
       rect:
         serializedVersion: 2
-        x: 5
-        y: 487
+        x: 105
+        y: 519
         width: 13
         height: 20
       alignment: 9
@@ -959,20 +937,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f2da55a6d789b642a68547db46bf0da
-      internalID: 8562968
+      spriteID: 8e931a7a9dffacc4bacbbb58759fb422
+      internalID: 1340596009
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_38
+      name: Gespiegerlterspieler_37
       rect:
         serializedVersion: 2
-        x: 37
-        y: 485
-        width: 18
-        height: 21
+        x: 10
+        y: 487
+        width: 16
+        height: 19
       alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -981,17 +959,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 223714b4e1210fe43b638acd1b78845e
-      internalID: -2035248887
+      spriteID: 46300b9e73e0bd04fa451ea235ae44c1
+      internalID: -59629669
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_39
+      name: Gespiegerlterspieler_38
       rect:
         serializedVersion: 2
-        x: 60
+        x: 34
         y: 482
         width: 30
         height: 24
@@ -1003,20 +981,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6055f8d09bee21745bdeb48d66d5481e
-      internalID: -951766822
+      spriteID: 7ff90b79301b53049b61ef69a1ccadac
+      internalID: 1817905415
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_40
+      name: Gespiegerlterspieler_39
       rect:
         serializedVersion: 2
-        x: 98
-        y: 487
-        width: 16
-        height: 19
+        x: 69
+        y: 485
+        width: 18
+        height: 21
       alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1025,18 +1003,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 401117a269b118540aa11027cffc05e7
-      internalID: 1922476699
+      spriteID: 125213c421673a343ad9fdb2a1e1b36b
+      internalID: 1801959626
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_41
+      name: Gespiegerlterspieler_40
       rect:
         serializedVersion: 2
-        x: 5
-        y: 455
+        x: 106
+        y: 487
         width: 13
         height: 20
       alignment: 9
@@ -1047,41 +1025,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b7e3ca6d652098c4b9f91f703d532bf4
-      internalID: -263085591
+      spriteID: c2c6236486bd55d448a7264ebeca7f85
+      internalID: 572564523
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_42
+      name: Gespiegerlterspieler_41
       rect:
         serializedVersion: 2
-        x: 28
+        x: 6
         y: 455
-        width: 4
-        height: 10
-      alignment: 9
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4a06f038ea9131c4186f431a82f0242e
-      internalID: -2131178552
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_43
-      rect:
-        serializedVersion: 2
-        x: 37
-        y: 455
-        width: 13
+        width: 16
         height: 19
       alignment: 9
       pivot: {x: 0, y: 0}
@@ -1091,17 +1047,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b41f4719fca303c4b9d07317d9a00730
-      internalID: 1024091575
+      spriteID: 6d0a4345dc2d2e146b02dfca27f85cef
+      internalID: -1642239425
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_44
+      name: Gespiegerlterspieler_42
       rect:
         serializedVersion: 2
-        x: 60
+        x: 36
         y: 450
         width: 28
         height: 24
@@ -1113,19 +1069,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3975740ba14495640a72d1d72462d372
-      internalID: -275222780
+      spriteID: 95bf7711841798645956819398feeb60
+      internalID: -830093499
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_45
+      name: Gespiegerlterspieler_43
       rect:
         serializedVersion: 2
-        x: 102
+        x: 74
         y: 455
-        width: 16
+        width: 13
         height: 19
       alignment: 9
       pivot: {x: 0, y: 0}
@@ -1135,18 +1091,40 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3994ed5213ef4d949b9a4acc33d66a1d
-      internalID: -784314359
+      spriteID: e235df59ecbd9314d8614fd8cc73a091
+      internalID: -399780867
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_46
+      name: Gespiegerlterspieler_44
       rect:
         serializedVersion: 2
-        x: 5
-        y: 423
+        x: 92
+        y: 455
+        width: 4
+        height: 10
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d99907d01aedcfe498baa21e409c5e2d
+      internalID: -1172483271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gespiegerlterspieler_45
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 455
         width: 13
         height: 20
       alignment: 9
@@ -1157,83 +1135,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f462727c6e981841b0c8f354106c513
-      internalID: -1186265860
+      spriteID: 67043aaa4f758204a99314beb6654e2f
+      internalID: 2031890515
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_47
+      name: Gespiegerlterspieler_46
       rect:
         serializedVersion: 2
-        x: 29
-        y: 425
-        width: 6
-        height: 5
-      alignment: 9
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 629051d6174854e4fa29c2b75a076a77
-      internalID: 1819620739
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_48
-      rect:
-        serializedVersion: 2
-        x: 37
-        y: 423
-        width: 13
-        height: 19
-      alignment: 9
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 97f8908a51d860d43afabdb6ca25908a
-      internalID: 598016708
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_49
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 423
-        width: 22
-        height: 19
-      alignment: 9
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0abeff2539a538446b594d736ecb882e
-      internalID: -1927760949
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_50
-      rect:
-        serializedVersion: 2
-        x: 102
+        x: 8
         y: 422
         width: 14
         height: 20
@@ -1245,18 +1157,84 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57839117d36460d47ba054a494270416
-      internalID: 1156898811
+      spriteID: e08c49b06c322ff4da180e8a0f1727ac
+      internalID: 1093486345
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_51
+      name: Gespiegerlterspieler_47
       rect:
         serializedVersion: 2
-        x: 6
-        y: 391
+        x: 42
+        y: 423
+        width: 22
+        height: 19
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9de6c7107a618449bc74294f9cd4cd4
+      internalID: -649891912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gespiegerlterspieler_48
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 423
+        width: 13
+        height: 19
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02521ed3d1f5ed443a22206519851f7e
+      internalID: -463010589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gespiegerlterspieler_49
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 425
+        width: 6
+        height: 5
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf9f7670730cb7d489240792c3c835ff
+      internalID: -389727220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gespiegerlterspieler_50
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 423
         width: 13
         height: 20
       alignment: 9
@@ -1267,19 +1245,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c47716f131737a428ad8373ef5b1d5a
-      internalID: -1205141308
+      spriteID: d0bee525f8e5d744cb03138bf58927a1
+      internalID: -1087053835
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_52
+      name: Gespiegerlterspieler_51
       rect:
         serializedVersion: 2
-        x: 38
+        x: 9
         y: 391
-        width: 16
+        width: 15
+        height: 19
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77ddf7fc3ae56ef4d9fb08810c6200e7
+      internalID: 1647758289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gespiegerlterspieler_52
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 391
+        width: 32
         height: 20
       alignment: 9
       pivot: {x: 0, y: 0}
@@ -1289,17 +1289,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c837542b089d7ed4c911c55c027d0790
-      internalID: 114121084
+      spriteID: 7ca60fe79d626284ea1034cd91d4f350
+      internalID: -1182259075
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_53
+      name: Gespiegerlterspieler_53
       rect:
         serializedVersion: 2
-        x: 52
+        x: 66
         y: 392
         width: 6
         height: 11
@@ -1311,19 +1311,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01ba8b7ac735eda4b9a19de24533868e
-      internalID: -1059527211
+      spriteID: 7e4b24c06b65a7b4d99a389c2d4aec18
+      internalID: 711333750
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_54
+      name: Gespiegerlterspieler_54
       rect:
         serializedVersion: 2
-        x: 60
+        x: 70
         y: 391
-        width: 32
+        width: 16
         height: 20
       alignment: 9
       pivot: {x: 0, y: 0}
@@ -1333,40 +1333,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 551ece4b1311b0e469b3ce6caef38b71
-      internalID: 45247881
+      spriteID: ff01e100cef4f414a80dc8e72597485a
+      internalID: 1303589271
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_55
+      name: Gespiegerlterspieler_55
       rect:
         serializedVersion: 2
-        x: 100
+        x: 105
         y: 391
-        width: 15
-        height: 19
-      alignment: 9
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 792ed3c1650d7e74aa35563b085b2333
-      internalID: 1846653307
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_56
-      rect:
-        serializedVersion: 2
-        x: 6
-        y: 359
         width: 13
         height: 20
       alignment: 9
@@ -1377,17 +1355,83 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6671633f67d590b45948f69c92b1dfce
-      internalID: -103668008
+      spriteID: b88bf295fb81b584c85472ad4508b563
+      internalID: -2124441960
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_57
+      name: Gespiegerlterspieler_56
       rect:
         serializedVersion: 2
-        x: 31
+        x: 7
+        y: 359
+        width: 15
+        height: 19
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07b71f67b85be4240ad48183c3b1215c
+      internalID: 351648239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gespiegerlterspieler_57
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 359
+        width: 32
+        height: 20
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f12c1c6c3333394fbedba752200a2a6
+      internalID: 1802428089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gespiegerlterspieler_58
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 359
+        width: 16
+        height: 20
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5d786f9d32881a40a7370ce32a7165d
+      internalID: -1777933967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gespiegerlterspieler_59
+      rect:
+        serializedVersion: 2
+        x: 87
         y: 360
         width: 6
         height: 11
@@ -1399,19 +1443,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8cad4c203288ce43aa78ecaf12a3d99
-      internalID: -990364458
+      spriteID: 17a9ec011530c6a47a763a750abbe293
+      internalID: 260504127
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_58
+      name: Gespiegerlterspieler_60
       rect:
         serializedVersion: 2
-        x: 35
+        x: 105
         y: 359
-        width: 16
+        width: 13
         height: 20
       alignment: 9
       pivot: {x: 0, y: 0}
@@ -1421,41 +1465,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28d5105a40b4c2244bf752d7f8d11fbe
-      internalID: -1387909158
+      spriteID: 4ed4cf48e8eee46409d080a7e19092ef
+      internalID: -2082807612
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_59
+      name: Gespiegerlterspieler_61
       rect:
         serializedVersion: 2
-        x: 60
-        y: 359
-        width: 32
-        height: 20
-      alignment: 9
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c00ddbbd16d107a46b7cf122ecc957de
-      internalID: 1512789814
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_60
-      rect:
-        serializedVersion: 2
-        x: 102
-        y: 359
-        width: 15
+        x: 9
+        y: 327
+        width: 19
         height: 19
       alignment: 9
       pivot: {x: 0, y: 0}
@@ -1465,61 +1487,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1148c406926eaf64195b44f89dc57027
-      internalID: -32906367
+      spriteID: 7f110f93de78c5e47b3fbb1da9f39213
+      internalID: -512824993
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_61
+      name: Gespiegerlterspieler_62
       rect:
         serializedVersion: 2
-        x: 6
-        y: 327
-        width: 13
-        height: 20
-      alignment: 9
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dd11f258501ab244396f32dfa2d998e4
-      internalID: -182744524
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_62
-      rect:
-        serializedVersion: 2
-        x: 38
-        y: 327
-        width: 13
-        height: 23
-      alignment: 9
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1b3462fbbffc663478a89c159e0c0c06
-      internalID: 1843119587
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_63
-      rect:
-        serializedVersion: 2
-        x: 62
+        x: 41
         y: 327
         width: 21
         height: 24
@@ -1531,20 +1509,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8eafef2bdc701414c999c897ccc5eb48
-      internalID: 399149318
+      spriteID: 4700a3ee10e8f724691080eeaca0597c
+      internalID: 68976129
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_64
+      name: Gespiegerlterspieler_63
       rect:
         serializedVersion: 2
-        x: 96
+        x: 73
         y: 327
-        width: 19
-        height: 19
+        width: 13
+        height: 23
       alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1553,20 +1531,42 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f322100a35aae64bb4458957b3316bd
-      internalID: -1365994225
+      spriteID: 580bfa1ceccdd4d4ba1f13f9ac31fc09
+      internalID: -1755800446
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_65
+      name: Gespiegerlterspieler_64
       rect:
         serializedVersion: 2
-        x: 1
+        x: 105
+        y: 327
+        width: 13
+        height: 20
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c281912e63862da4585c8b485c31944b
+      internalID: -1282933986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gespiegerlterspieler_65
+      rect:
+        serializedVersion: 2
+        x: 10
         y: 295
-        width: 17
-        height: 14
+        width: 13
+        height: 20
       alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1575,39 +1575,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ecd55c146dc9724e95a87877a25cbf6
-      internalID: -2092689848
+      spriteID: e929ed9447ffc664988879d35f8b0e75
+      internalID: -687970542
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_66
+      name: Gespiegerlterspieler_66
       rect:
         serializedVersion: 2
-        x: 33
-        y: 295
-        width: 17
-        height: 16
-      alignment: 9
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 544bf23e6687fdf40a2c87ae23dc6139
-      internalID: 1856049924
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_67
-      rect:
-        serializedVersion: 2
-        x: 67
+        x: 42
         y: 295
         width: 15
         height: 18
@@ -1619,20 +1597,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f95f54ae6717044481da7cbda7a56d6
-      internalID: -1104916241
+      spriteID: a07f7eed794994d42903a0f09c93d1a6
+      internalID: -1751250066
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_68
+      name: Gespiegerlterspieler_67
       rect:
         serializedVersion: 2
-        x: 101
+        x: 74
         y: 295
-        width: 13
-        height: 20
+        width: 17
+        height: 16
       alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1641,17 +1619,39 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a42b07c037fd0f4faacdcb250f83a2e
-      internalID: -1967801480
+      spriteID: 9669ca9fd8a2ff843a0e0faf0f9d7ed7
+      internalID: -2064053137
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_69
+      name: Gespiegerlterspieler_68
       rect:
         serializedVersion: 2
-        x: 6
+        x: 106
+        y: 295
+        width: 17
+        height: 14
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecfe56b1b76d0404f84fb8ba4529d81d
+      internalID: -251375814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gespiegerlterspieler_69
+      rect:
+        serializedVersion: 2
+        x: 9
         y: 263
         width: 13
         height: 20
@@ -1663,17 +1663,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4852a1d1e1344d4e95d20d5a6582f56
-      internalID: -1544600048
+      spriteID: 8df387fc8ae06904081536ac1573fa09
+      internalID: -646462975
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_70
+      name: Gespiegerlterspieler_70
       rect:
         serializedVersion: 2
-        x: 38
+        x: 41
         y: 263
         width: 13
         height: 20
@@ -1685,17 +1685,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ab1762eef96f374fa5af96d8368b1c1
-      internalID: 201082937
+      spriteID: 0e360712fd861864bbebe9174db9c13d
+      internalID: 195218748
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_71
+      name: Gespiegerlterspieler_71
       rect:
         serializedVersion: 2
-        x: 70
+        x: 73
         y: 263
         width: 13
         height: 20
@@ -1707,17 +1707,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b76c2e56bc10bea49a8c45aad548dbb2
-      internalID: -351550629
+      spriteID: 90275955cce35274bb0c453ecdf6beaf
+      internalID: 1045696154
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_72
+      name: Gespiegerlterspieler_72
       rect:
         serializedVersion: 2
-        x: 102
+        x: 105
         y: 263
         width: 13
         height: 20
@@ -1729,17 +1729,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8240aa9eca9a1b4f8c17bf5939edbc1
-      internalID: 1084513806
+      spriteID: 7edc49ceafc271e4788fbd088e837e1c
+      internalID: -833371222
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_73
+      name: Gespiegerlterspieler_73
       rect:
         serializedVersion: 2
-        x: 5
+        x: 10
         y: 231
         width: 13
         height: 20
@@ -1751,17 +1751,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b3f7ae4fd77f084da200898084139da
-      internalID: -618761099
+      spriteID: 8daec8a8e3f73794ba6b1d25f14161c8
+      internalID: 368700414
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_74
+      name: Gespiegerlterspieler_74
       rect:
         serializedVersion: 2
-        x: 37
+        x: 42
         y: 231
         width: 13
         height: 20
@@ -1773,17 +1773,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e61099444b2b2e41b9536ffe5e308af
-      internalID: 1589683993
+      spriteID: b3a001416425c6b40a5907b72cef05d8
+      internalID: -1211197117
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_75
+      name: Gespiegerlterspieler_75
       rect:
         serializedVersion: 2
-        x: 69
+        x: 74
         y: 231
         width: 13
         height: 20
@@ -1795,17 +1795,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5cad4934304196e40b6dcf80cc9e1d39
-      internalID: 240143735
+      spriteID: 7c78c0c1a1d1e5043afb369d6eedbfdf
+      internalID: 1001416752
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_76
+      name: Gespiegerlterspieler_76
       rect:
         serializedVersion: 2
-        x: 101
+        x: 106
         y: 231
         width: 13
         height: 20
@@ -1817,17 +1817,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 123a6666a9032cc4e9a202b7f3797395
-      internalID: 1697123763
+      spriteID: 2776e7e5f63ea1241a1e816afcdc9540
+      internalID: -2099413873
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_77
+      name: Gespiegerlterspieler_77
       rect:
         serializedVersion: 2
-        x: 6
+        x: 9
         y: 199
         width: 13
         height: 20
@@ -1839,17 +1839,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b88fd37b21b3d3e4a8c2cd364b729d1c
-      internalID: 1594520219
+      spriteID: 21ad142cfbab65c4bbdd7708f19cd73a
+      internalID: 1955017341
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_78
+      name: Gespiegerlterspieler_78
       rect:
         serializedVersion: 2
-        x: 38
+        x: 41
         y: 199
         width: 13
         height: 20
@@ -1861,17 +1861,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5508e0b88284b9645ba05d66bdf95637
-      internalID: 1507980286
+      spriteID: fa56318c3698da142a6a6c640c8741b2
+      internalID: 964303610
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_79
+      name: Gespiegerlterspieler_79
       rect:
         serializedVersion: 2
-        x: 70
+        x: 73
         y: 199
         width: 13
         height: 20
@@ -1883,17 +1883,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2dbefdb80fe07df48b6c8685dfb2bd83
-      internalID: -784616036
+      spriteID: 20bbf6f3d233a3d4a9cf815f16d6ea1e
+      internalID: 488929148
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_80
+      name: Gespiegerlterspieler_80
       rect:
         serializedVersion: 2
-        x: 102
+        x: 105
         y: 199
         width: 13
         height: 20
@@ -1905,83 +1905,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca6b212b0eb09c7438a419d49d54e583
-      internalID: -2070899409
+      spriteID: 9e8da671a2180be40b64ff1fac4d1f7f
+      internalID: 1677505837
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_81
+      name: Gespiegerlterspieler_81
       rect:
         serializedVersion: 2
-        x: 4
-        y: 166
-        width: 16
-        height: 21
-      alignment: 9
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b9b356db920d3c64ca4f97cee78c4710
-      internalID: -586963473
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_82
-      rect:
-        serializedVersion: 2
-        x: 38
-        y: 166
-        width: 13
-        height: 21
-      alignment: 9
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c802ee1c21f044245a714075a66b64c0
-      internalID: 1025379074
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_83
-      rect:
-        serializedVersion: 2
-        x: 69
-        y: 165
-        width: 14
-        height: 22
-      alignment: 9
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 83adfbc260f66304e8df3177d2c5a9ad
-      internalID: 381523645
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_84
-      rect:
-        serializedVersion: 2
-        x: 100
+        x: 8
         y: 160
         width: 16
         height: 26
@@ -1993,20 +1927,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: efb7c31f39d51584791d183495c681e1
-      internalID: -1069851082
+      spriteID: efac027eebb438e408c36b69e559aa5a
+      internalID: 2100212166
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_85
+      name: Gespiegerlterspieler_82
       rect:
         serializedVersion: 2
-        x: 1
-        y: 135
-        width: 19
-        height: 20
+        x: 41
+        y: 165
+        width: 14
+        height: 22
       alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2015,20 +1949,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f352e273e87c04449de6a63747624b2
-      internalID: -1078013633
+      spriteID: cf00af059a6d732448e266e572f1c357
+      internalID: -551826362
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_86
+      name: Gespiegerlterspieler_83
       rect:
         serializedVersion: 2
-        x: 34
-        y: 135
-        width: 17
-        height: 19
+        x: 73
+        y: 166
+        width: 13
+        height: 21
       alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2037,20 +1971,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 693041cfcef34934a9a349a1a0880e82
-      internalID: -1456106888
+      spriteID: 073a5f74be113504695f459d6911b037
+      internalID: -406494493
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_87
+      name: Gespiegerlterspieler_84
       rect:
         serializedVersion: 2
-        x: 64
-        y: 135
-        width: 18
-        height: 19
+        x: 104
+        y: 166
+        width: 16
+        height: 21
       alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2059,17 +1993,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85dc421e2053f664d8368c585ed874a6
-      internalID: -1162173162
+      spriteID: 1792c59f5462c9d4eb928164a06c50d6
+      internalID: 1241627748
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_88
+      name: Gespiegerlterspieler_85
       rect:
         serializedVersion: 2
-        x: 92
+        x: 10
         y: 135
         width: 22
         height: 19
@@ -2081,20 +2015,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22e88f9d9a6e9584e8166c2886cd7bb6
-      internalID: 499128068
+      spriteID: fcf3aa8a94ef5704882a467d329ea4ae
+      internalID: -322487839
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_89
+      name: Gespiegerlterspieler_86
       rect:
         serializedVersion: 2
-        x: 4
-        y: 103
-        width: 16
-        height: 22
+        x: 42
+        y: 135
+        width: 18
+        height: 19
       alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2103,20 +2037,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d4b744217ba50147b6179db0987fd27
-      internalID: 793068378
+      spriteID: c84df6b5c0ea0d149ba46d5338b0565f
+      internalID: -861714346
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_90
+      name: Gespiegerlterspieler_87
       rect:
         serializedVersion: 2
-        x: 38
-        y: 103
-        width: 13
-        height: 22
+        x: 73
+        y: 135
+        width: 17
+        height: 19
       alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2125,20 +2059,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8863a151fa61fbc4c9d2e19f90ec23f6
-      internalID: 149608773
+      spriteID: a1c1b1dc23175b44298ad681bbbe5af9
+      internalID: -1094106511
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_91
+      name: Gespiegerlterspieler_88
       rect:
         serializedVersion: 2
-        x: 69
-        y: 103
-        width: 14
-        height: 22
+        x: 104
+        y: 135
+        width: 19
+        height: 20
       alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2147,17 +2081,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6da6056f365793b488491cc9b9f733b5
-      internalID: 540926799
+      spriteID: fa34ccaec110a2242b588ebda13da779
+      internalID: -734595625
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_92
+      name: Gespiegerlterspieler_89
       rect:
         serializedVersion: 2
-        x: 100
+        x: 8
         y: 103
         width: 16
         height: 25
@@ -2169,20 +2103,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da10429e0fefa8e42b3a609f994df42a
-      internalID: 274921554
+      spriteID: fb5f69a68e55e324b95e56f90f423fb5
+      internalID: -1918800700
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_93
+      name: Gespiegerlterspieler_90
       rect:
         serializedVersion: 2
-        x: 6
-        y: 71
-        width: 13
-        height: 19
+        x: 41
+        y: 103
+        width: 14
+        height: 22
       alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2191,20 +2125,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29fe9557a6529444d94cf3fde3594998
-      internalID: 1281803519
+      spriteID: 0c3c84b6b146a104c86aaa5c06fd81a5
+      internalID: 814261527
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_94
+      name: Gespiegerlterspieler_91
       rect:
         serializedVersion: 2
-        x: 38
-        y: 71
+        x: 73
+        y: 103
         width: 13
-        height: 19
+        height: 22
       alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2213,17 +2147,39 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 489bb71e93341b54890799b5b0c4221e
-      internalID: -1919483309
+      spriteID: 3e5ae0dddc097964eab9b040b504f946
+      internalID: 1573525159
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_95
+      name: Gespiegerlterspieler_92
       rect:
         serializedVersion: 2
-        x: 70
+        x: 104
+        y: 103
+        width: 16
+        height: 22
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d75d988d28c5f34dbc44c8ccea579cc
+      internalID: -1985590705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gespiegerlterspieler_93
+      rect:
+        serializedVersion: 2
+        x: 9
         y: 71
         width: 13
         height: 20
@@ -2235,17 +2191,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b83a445f5917bdc49b4edb87475481bc
-      internalID: -1464411627
+      spriteID: 77d1f8e262bf57a45baf68c6c735a2f0
+      internalID: 1878423984
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_96
+      name: Gespiegerlterspieler_94
       rect:
         serializedVersion: 2
-        x: 102
+        x: 41
         y: 71
         width: 13
         height: 20
@@ -2257,18 +2213,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa40f6801aacd5b40a16cc7925cbbddc
-      internalID: -767028630
+      spriteID: 26771adb7932e264aa60bebf91690656
+      internalID: 24705758
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_97
+      name: Gespiegerlterspieler_95
       rect:
         serializedVersion: 2
-        x: 5
-        y: 39
+        x: 73
+        y: 71
         width: 13
         height: 19
       alignment: 9
@@ -2279,18 +2235,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8271f0d790d6cd94da1166f6fb644207
-      internalID: 1327401309
+      spriteID: 6253e82c536d0474ebea98b223bd9e1a
+      internalID: -1457400289
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_98
+      name: Gespiegerlterspieler_96
       rect:
         serializedVersion: 2
-        x: 37
-        y: 39
+        x: 105
+        y: 71
         width: 13
         height: 19
       alignment: 9
@@ -2301,17 +2257,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 43fa954fb56747547a8f33f2f542da4a
-      internalID: 1093317655
+      spriteID: b35b097527b81e24a9c52376728ba8c2
+      internalID: -1772776272
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_99
+      name: Gespiegerlterspieler_97
       rect:
         serializedVersion: 2
-        x: 69
+        x: 10
         y: 39
         width: 13
         height: 20
@@ -2323,17 +2279,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: deec8d6bb2b02f746afba6d8055096c4
-      internalID: 1157386723
+      spriteID: 6ac3386b73373e04bbc9eca63d1c5c4b
+      internalID: -207723659
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_100
+      name: Gespiegerlterspieler_98
       rect:
         serializedVersion: 2
-        x: 101
+        x: 42
         y: 39
         width: 13
         height: 20
@@ -2345,17 +2301,83 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd84bdef756fa634191f849f817ac6ab
-      internalID: -215105284
+      spriteID: 5db8750c406e07244b33ac1d1d33977b
+      internalID: -1654231440
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_101
+      name: Gespiegerlterspieler_99
       rect:
         serializedVersion: 2
-        x: 5
+        x: 74
+        y: 39
+        width: 13
+        height: 19
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab92c5d97028d4d468722bb8308ed470
+      internalID: 1526141448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gespiegerlterspieler_100
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 39
+        width: 13
+        height: 19
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36d7b8cb56a66cd4687e5c639e04e752
+      internalID: 1045070629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gespiegerlterspieler_101
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 7
+        width: 13
+        height: 20
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96c67f472cd5ab04dacce4ee85218456
+      internalID: 2028078358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gespiegerlterspieler_102
+      rect:
+        serializedVersion: 2
+        x: 41
         y: 7
         width: 14
         height: 20
@@ -2367,17 +2389,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fbc484db2c7d49d49a3bc6575fed6ae2
-      internalID: 1385061607
+      spriteID: cf0e689f04d11da47a9f0878a052bab8
+      internalID: -151770123
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_102
+      name: Gespiegerlterspieler_103
       rect:
         serializedVersion: 2
-        x: 36
+        x: 73
         y: 7
         width: 15
         height: 20
@@ -2389,17 +2411,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e60586839a54dd745a95ed9ce4d5a004
-      internalID: 2062787468
+      spriteID: 7dfdb323e70b06948903ea3922051add
+      internalID: -344515113
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_103
+      name: Gespiegerlterspieler_104
       rect:
         serializedVersion: 2
-        x: 69
+        x: 105
         y: 7
         width: 14
         height: 20
@@ -2411,30 +2433,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d151cee3d0718774e8c66317bb241a0a
-      internalID: 2125343806
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_104
-      rect:
-        serializedVersion: 2
-        x: 102
-        y: 7
-        width: 13
-        height: 20
-      alignment: 9
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 483598bd5dfac8347a61f103bee9bd85
-      internalID: 1787582065
+      spriteID: 597ac6a76b5a59e4da957558019b7714
+      internalID: 717242446
       vertices: []
       indices: 
       edges: []
@@ -2453,111 +2453,111 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Player_0: 1209683134
-      Player_1: -2017810120
-      Player_10: 1441832348
-      Player_100: -215105284
-      Player_101: 1385061607
-      Player_102: 2062787468
-      Player_103: 2125343806
-      Player_104: 1787582065
-      Player_11: 1169929480
-      Player_12: 270692003
-      Player_13: 1491945574
-      Player_14: 1404577210
-      Player_15: 1183630270
-      Player_16: 1271195366
-      Player_17: -803799522
-      Player_18: 2123659199
-      Player_19: 1363234804
-      Player_2: 945967015
-      Player_20: -1727629746
-      Player_21: -540151525
-      Player_22: -290494033
-      Player_23: 505823599
-      Player_24: 1763807599
-      Player_25: 418398445
-      Player_26: 1974771264
-      Player_27: 1736743958
-      Player_28: 825300524
-      Player_29: -657992852
-      Player_3: -1075375502
-      Player_30: -2128822396
-      Player_31: -1853515262
-      Player_32: 328201571
-      Player_33: 1765431130
-      Player_34: 972740092
-      Player_35: -406572348
-      Player_36: -1833786707
-      Player_37: 8562968
-      Player_38: -2035248887
-      Player_39: -951766822
-      Player_4: 594003081
-      Player_40: 1922476699
-      Player_41: -263085591
-      Player_42: -2131178552
-      Player_43: 1024091575
-      Player_44: -275222780
-      Player_45: -784314359
-      Player_46: -1186265860
-      Player_47: 1819620739
-      Player_48: 598016708
-      Player_49: -1927760949
-      Player_5: 1648004246
-      Player_50: 1156898811
-      Player_51: -1205141308
-      Player_52: 114121084
-      Player_53: -1059527211
-      Player_54: 45247881
-      Player_55: 1846653307
-      Player_56: -103668008
-      Player_57: -990364458
-      Player_58: -1387909158
-      Player_59: 1512789814
-      Player_6: -1458547266
-      Player_60: -32906367
-      Player_61: -182744524
-      Player_62: 1843119587
-      Player_63: 399149318
-      Player_64: -1365994225
-      Player_65: -2092689848
-      Player_66: 1856049924
-      Player_67: -1104916241
-      Player_68: -1967801480
-      Player_69: -1544600048
-      Player_7: -930787914
-      Player_70: 201082937
-      Player_71: -351550629
-      Player_72: 1084513806
-      Player_73: -618761099
-      Player_74: 1589683993
-      Player_75: 240143735
-      Player_76: 1697123763
-      Player_77: 1594520219
-      Player_78: 1507980286
-      Player_79: -784616036
-      Player_8: 1910472571
-      Player_80: -2070899409
-      Player_81: -586963473
-      Player_82: 1025379074
-      Player_83: 381523645
-      Player_84: -1069851082
-      Player_85: -1078013633
-      Player_86: -1456106888
-      Player_87: -1162173162
-      Player_88: 499128068
-      Player_89: 793068378
-      Player_9: -580332026
-      Player_90: 149608773
-      Player_91: 540926799
-      Player_92: 274921554
-      Player_93: 1281803519
-      Player_94: -1919483309
-      Player_95: -1464411627
-      Player_96: -767028630
-      Player_97: 1327401309
-      Player_98: 1093317655
-      Player_99: 1157386723
+      Gespiegerlterspieler_0: 948696179
+      Gespiegerlterspieler_1: -2035743322
+      Gespiegerlterspieler_10: 1503749571
+      Gespiegerlterspieler_100: 1045070629
+      Gespiegerlterspieler_101: 2028078358
+      Gespiegerlterspieler_102: -151770123
+      Gespiegerlterspieler_103: -344515113
+      Gespiegerlterspieler_104: 717242446
+      Gespiegerlterspieler_11: -1346425264
+      Gespiegerlterspieler_12: 1605961564
+      Gespiegerlterspieler_13: -1916119864
+      Gespiegerlterspieler_14: -613350601
+      Gespiegerlterspieler_15: 920495171
+      Gespiegerlterspieler_16: -698185622
+      Gespiegerlterspieler_17: 1515006490
+      Gespiegerlterspieler_18: -1972013738
+      Gespiegerlterspieler_19: -1031779197
+      Gespiegerlterspieler_2: 254643558
+      Gespiegerlterspieler_20: -2056259914
+      Gespiegerlterspieler_21: -1767562608
+      Gespiegerlterspieler_22: -1084535267
+      Gespiegerlterspieler_23: 1541244169
+      Gespiegerlterspieler_24: -1295083874
+      Gespiegerlterspieler_25: 1036569251
+      Gespiegerlterspieler_26: -1280153275
+      Gespiegerlterspieler_27: -1512891896
+      Gespiegerlterspieler_28: -314433312
+      Gespiegerlterspieler_29: 926717992
+      Gespiegerlterspieler_3: 1445971864
+      Gespiegerlterspieler_30: 1765866887
+      Gespiegerlterspieler_31: 1831695916
+      Gespiegerlterspieler_32: 1704013894
+      Gespiegerlterspieler_33: -429644410
+      Gespiegerlterspieler_34: 1864088126
+      Gespiegerlterspieler_35: 287106207
+      Gespiegerlterspieler_36: 1340596009
+      Gespiegerlterspieler_37: -59629669
+      Gespiegerlterspieler_38: 1817905415
+      Gespiegerlterspieler_39: 1801959626
+      Gespiegerlterspieler_4: 482523383
+      Gespiegerlterspieler_40: 572564523
+      Gespiegerlterspieler_41: -1642239425
+      Gespiegerlterspieler_42: -830093499
+      Gespiegerlterspieler_43: -399780867
+      Gespiegerlterspieler_44: -1172483271
+      Gespiegerlterspieler_45: 2031890515
+      Gespiegerlterspieler_46: 1093486345
+      Gespiegerlterspieler_47: -649891912
+      Gespiegerlterspieler_48: -463010589
+      Gespiegerlterspieler_49: -389727220
+      Gespiegerlterspieler_5: -1263136348
+      Gespiegerlterspieler_50: -1087053835
+      Gespiegerlterspieler_51: 1647758289
+      Gespiegerlterspieler_52: -1182259075
+      Gespiegerlterspieler_53: 711333750
+      Gespiegerlterspieler_54: 1303589271
+      Gespiegerlterspieler_55: -2124441960
+      Gespiegerlterspieler_56: 351648239
+      Gespiegerlterspieler_57: 1802428089
+      Gespiegerlterspieler_58: -1777933967
+      Gespiegerlterspieler_59: 260504127
+      Gespiegerlterspieler_6: 1115382344
+      Gespiegerlterspieler_60: -2082807612
+      Gespiegerlterspieler_61: -512824993
+      Gespiegerlterspieler_62: 68976129
+      Gespiegerlterspieler_63: -1755800446
+      Gespiegerlterspieler_64: -1282933986
+      Gespiegerlterspieler_65: -687970542
+      Gespiegerlterspieler_66: -1751250066
+      Gespiegerlterspieler_67: -2064053137
+      Gespiegerlterspieler_68: -251375814
+      Gespiegerlterspieler_69: -646462975
+      Gespiegerlterspieler_7: 898737130
+      Gespiegerlterspieler_70: 195218748
+      Gespiegerlterspieler_71: 1045696154
+      Gespiegerlterspieler_72: -833371222
+      Gespiegerlterspieler_73: 368700414
+      Gespiegerlterspieler_74: -1211197117
+      Gespiegerlterspieler_75: 1001416752
+      Gespiegerlterspieler_76: -2099413873
+      Gespiegerlterspieler_77: 1955017341
+      Gespiegerlterspieler_78: 964303610
+      Gespiegerlterspieler_79: 488929148
+      Gespiegerlterspieler_8: -306895537
+      Gespiegerlterspieler_80: 1677505837
+      Gespiegerlterspieler_81: 2100212166
+      Gespiegerlterspieler_82: -551826362
+      Gespiegerlterspieler_83: -406494493
+      Gespiegerlterspieler_84: 1241627748
+      Gespiegerlterspieler_85: -322487839
+      Gespiegerlterspieler_86: -861714346
+      Gespiegerlterspieler_87: -1094106511
+      Gespiegerlterspieler_88: -734595625
+      Gespiegerlterspieler_89: -1918800700
+      Gespiegerlterspieler_9: 908886711
+      Gespiegerlterspieler_90: 814261527
+      Gespiegerlterspieler_91: 1573525159
+      Gespiegerlterspieler_92: -1985590705
+      Gespiegerlterspieler_93: 1878423984
+      Gespiegerlterspieler_94: 24705758
+      Gespiegerlterspieler_95: -1457400289
+      Gespiegerlterspieler_96: -1772776272
+      Gespiegerlterspieler_97: -207723659
+      Gespiegerlterspieler_98: -1654231440
+      Gespiegerlterspieler_99: 1526141448
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
