@@ -25,7 +25,7 @@ public class PlayerCtrl : MonoBehaviour
         speedX = Input.GetAxis("Horizontal");
         speedY = Input.GetAxis("Vertical");
         rb.velocity = new Vector2(speedX * moveSpeed, speedY * moveSpeed);
-        animator.SetFloat("moveX", input.x);
-        animator.SetFloat("moveY", input.y);
+        animator.SetFloat("moveX", speedX);
+        animator.SetFloat("moveY", speedY);
     }
 }
