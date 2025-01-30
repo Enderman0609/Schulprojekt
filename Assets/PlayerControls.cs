@@ -8,6 +8,7 @@ public class PlayerCtrl : MonoBehaviour
     public float moveSpeed;
     float speedX, speedY;
     private bool isMoving;
+    public LayerMask battleLayer;
     Rigidbody2D rb;
     // Start is called before the first frame update
     private void Awake()
@@ -30,5 +31,13 @@ public class PlayerCtrl : MonoBehaviour
         animator.SetFloat("moveY", speedY);
         isMoving = speedX != 0 || speedY != 0;
         animator.SetBool("isMoving", isMoving);
+        CheckforEncounters();
+    }
+    private void CheckforEncounters()
+    {
+        if (Physics2D.OverlapCircle(transform.position, 0.01f, battleLayer) != null)
+        {
+            Debug.Log("Battle");
+        }
     }
 }

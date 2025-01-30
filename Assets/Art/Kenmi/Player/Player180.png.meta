@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: d64fdee322d99594386840d1d5369625
+guid: 1138ad8ec8a443f45acebfc638ceea30
 AssetOrigin:
   serializedVersion: 1
   productId: 295726
   packageName: Cute Fantasy RPG - 16x16 top down pixel art asset pack
   packageVersion: 1.0
-  assetPath: Assets/Kenmi/Cute Fantasy RPG - 16x16 top down pixel art asset pack/Sprites/Player/Player.png
+  assetPath: Assets/Kenmi/Cute Fantasy RPG - 16x16 top down pixel art asset pack/Sprites/Player/Player180.png
   uploadId: 694123
 TextureImporter:
   internalIDToNameTable: []
@@ -1475,7 +1475,7 @@ TextureImporter:
       name: Player_61
       rect:
         serializedVersion: 2
-        x: 32
+        x: 33
         y: 384
         width: 32
         height: 32
@@ -1497,9 +1497,9 @@ TextureImporter:
       name: Player_62
       rect:
         serializedVersion: 2
-        x: 64
+        x: 65
         y: 384
-        width: 32
+        width: 31
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1563,13 +1563,13 @@ TextureImporter:
       name: Player_65
       rect:
         serializedVersion: 2
-        x: 32
+        x: 33
         y: 352
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 1, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -1585,13 +1585,13 @@ TextureImporter:
       name: Player_66
       rect:
         serializedVersion: 2
-        x: 64
+        x: 65
         y: 352
-        width: 32
+        width: 31
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 2, w: 0}
       customData: 
       outline: []
       physicsShape: []
