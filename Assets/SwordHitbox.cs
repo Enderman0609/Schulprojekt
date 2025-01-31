@@ -4,9 +4,11 @@ using System.Collections.Generic;
 public class SwordHitbox : MonoBehaviour
 {
     public int swordDamage = 1;
-    public Vector3 faceBot = new Vector3(0.545f, -0.2f, 0);
-    public Vector3 faceTop = new Vector3(0.545f, 0.8f, 0);
- public Collider2D swordCollider;
+    public Vector3 faceBot = new Vector3(0, 0, 0);
+    public Vector3 faceTop = new Vector3(0, 1, 0);
+    public Vector3 faceLeft = new Vector3(0, 0, 0);
+    public Vector3 faceRight = new Vector3(0, 0, 0);
+    public Collider2D swordCollider;
     void Start()
     {
         if (swordCollider == null)
@@ -16,17 +18,39 @@ public class SwordHitbox : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collider)
     {
-      collider.SendMessage("OnHit", swordDamage);
+        collider.SendMessage("OnHit", swordDamage);
     }
-    void IsFacingRight(bool facingRight)
+    void FacingTop(bool FacingTop)
     {
-        if (facingRight)
+        if (FacingTop == true)
         {
             gameObject.transform.localPosition = faceTop;
+            gameObject.transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
-        else
+    }
+    void FacingBot(bool FacingBot)
+    {
+        if (FacingBot == true)
         {
             gameObject.transform.localPosition = faceBot;
+            gameObject.transform.localRotation = Quaternion.Euler(0, 0, 0);
+        }
+    }
+    void FacingLeft(bool FacingLeft)
+    {
+        if (FacingLeft == true)
+        {
+            gameObject.transform.localPosition = faceLeft;
+            gameObject.transform.localRotation = Quaternion.Euler(0, 0, 270
+        );
+        }
+    }
+    void FacingRight(bool FacingRight)
+    {
+        if (FacingRight == true)
+        {
+            gameObject.transform.localPosition = faceRight;
+            gameObject.transform.localRotation = Quaternion.Euler(0, 0, 90);
         }
     }
 }

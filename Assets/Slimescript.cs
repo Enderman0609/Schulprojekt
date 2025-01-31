@@ -23,15 +23,15 @@ public class SlimeScript : MonoBehaviour
         Debug.Log("Slime hit for" + damage);
         Health -= (int)damage;
         if (health <= 0)
-            {
-                animator.SetTrigger("death");
-                
-            }
+        {
+            animator.SetTrigger("death");
+
+        }
     }
     void DestroyEntity()
-{
-    Destroy(gameObject); // Löscht das GameObject
-}
+    {
+        Destroy(gameObject); // Löscht das GameObject
+    }
     void Start()
     {
         target = GameObject.Find("Player").GetComponent<Transform>();
@@ -41,15 +41,17 @@ public class SlimeScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector2.Distance(transform.position, target.position) < 8) {
-        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-        animator.SetBool("isMoving", true);
+        if (Vector2.Distance(transform.position, target.position) < 8)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+            animator.SetBool("isMoving", true);
         }
-       
-        else {
+
+        else
+        {
             animator.SetBool("isMoving", false);
         }
-        
+
     }
 }
 
