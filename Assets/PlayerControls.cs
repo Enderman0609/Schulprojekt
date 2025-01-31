@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class PlayerCtrl : MonoBehaviour
@@ -8,7 +9,8 @@ public class PlayerCtrl : MonoBehaviour
     public float moveSpeed;
     float speedX, speedY;
     private bool isMoving;
-    public LayerMask battleLayer;
+    private bool Swordattack; 
+    bool canMove=true;
     Rigidbody2D rb;
     // Start is called before the first frame update
     private void Awake()
@@ -24,6 +26,14 @@ public class PlayerCtrl : MonoBehaviour
     [System.Obsolete]
     void Update()
     {
+        if (canMove)
+    {
+        moveSpeed = 2;
+    }
+    else
+    {
+        moveSpeed = 0;
+    }
         speedX = Input.GetAxis("Horizontal");
         speedY = Input.GetAxis("Vertical");
         rb.velocity = new Vector2(speedX * moveSpeed, speedY * moveSpeed);
@@ -31,13 +41,17 @@ public class PlayerCtrl : MonoBehaviour
         animator.SetFloat("moveY", speedY);
         isMoving = speedX != 0 || speedY != 0;
         animator.SetBool("isMoving", isMoving);
-        CheckforEncounters();
-    }
-    private void CheckforEncounters()
-    {
-        if (Physics2D.OverlapCircle(transform.position, 0.01f, battleLayer) != null)
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            Debug.Log("Battle");
+            animator.SetTrigger("Swordattack");
         }
+    }
+    void LockMovement()
+    {
+        canMove=false;
+    }
+    void UnlockMovement()
+    {
+        canMove=true;
     }
 }
