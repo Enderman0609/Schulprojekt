@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Rendering;
@@ -9,8 +10,10 @@ public class PlayerCtrl : MonoBehaviour
     public float moveSpeed;
     float speedX, speedY;
     private bool isMoving;
-    private bool Swordattack; 
-    bool canMove=true;
+    private bool Swordattack;
+    bool canMove = true;
+    public GameObject swordHitbox;
+    Collider2D swordCollider;
     Rigidbody2D rb;
     // Start is called before the first frame update
     private void Awake()
@@ -19,7 +22,8 @@ public class PlayerCtrl : MonoBehaviour
     }
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();  
+        rb = GetComponent<Rigidbody2D>();
+        swordCollider = swordHitbox.GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
@@ -27,13 +31,13 @@ public class PlayerCtrl : MonoBehaviour
     void Update()
     {
         if (canMove)
-    {
-        moveSpeed = 2;
-    }
-    else
-    {
-        moveSpeed = 0;
-    }
+        {
+            moveSpeed = 2;
+        }
+        else
+        {
+            moveSpeed = 0;
+        }
         speedX = Input.GetAxis("Horizontal");
         speedY = Input.GetAxis("Vertical");
         rb.velocity = new Vector2(speedX * moveSpeed, speedY * moveSpeed);
@@ -45,13 +49,38 @@ public class PlayerCtrl : MonoBehaviour
         {
             animator.SetTrigger("Swordattack");
         }
+
+        if (Mathf.Abs(speedX) < Mathf.Abs(speedY))
+        {
+            if (speedY > 0)
+            {
+                gameObject.BroadcastMessage("FacingTop", true);
+            }
+            else if (speedY < 0)
+            {
+                gameObject.BroadcastMessage("FacingBot", true);
+            }
+
+        }
+        else
+        {
+            if (speedX < 0)
+            {
+                gameObject.BroadcastMessage("FacingLeft", true);
+            }
+            else if (speedX > 0)
+            {
+                gameObject.BroadcastMessage("FacingRight", true);
+            }
+        }
     }
     void LockMovement()
     {
-        canMove=false;
+        canMove = false;
     }
     void UnlockMovement()
     {
-        canMove=true;
+        canMove = true;
     }
+
 }
