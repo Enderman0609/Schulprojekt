@@ -1409,8 +1409,8 @@ TextureImporter:
       name: Skeleton_Bowman_58
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
+        x: 128
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -1431,8 +1431,8 @@ TextureImporter:
       name: Skeleton_Bowman_59
       rect:
         serializedVersion: 2
-        x: 32
-        y: 64
+        x: 160
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -1453,7 +1453,7 @@ TextureImporter:
       name: Skeleton_Bowman_60
       rect:
         serializedVersion: 2
-        x: 64
+        x: 0
         y: 64
         width: 32
         height: 32
@@ -1475,7 +1475,7 @@ TextureImporter:
       name: Skeleton_Bowman_61
       rect:
         serializedVersion: 2
-        x: 96
+        x: 32
         y: 64
         width: 32
         height: 32
@@ -1497,8 +1497,8 @@ TextureImporter:
       name: Skeleton_Bowman_62
       rect:
         serializedVersion: 2
-        x: 0
-        y: 32
+        x: 64
+        y: 64
         width: 32
         height: 32
       alignment: 0
@@ -1519,8 +1519,8 @@ TextureImporter:
       name: Skeleton_Bowman_63
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
+        x: 96
+        y: 64
         width: 32
         height: 32
       alignment: 0
@@ -1541,8 +1541,8 @@ TextureImporter:
       name: Skeleton_Bowman_64
       rect:
         serializedVersion: 2
-        x: 64
-        y: 32
+        x: 128
+        y: 64
         width: 32
         height: 32
       alignment: 0
@@ -1563,8 +1563,8 @@ TextureImporter:
       name: Skeleton_Bowman_65
       rect:
         serializedVersion: 2
-        x: 96
-        y: 32
+        x: 160
+        y: 64
         width: 32
         height: 32
       alignment: 0
@@ -1586,7 +1586,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 32
         width: 32
         height: 32
       alignment: 0
@@ -1608,7 +1608,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 0
+        y: 32
         width: 32
         height: 32
       alignment: 0
@@ -1630,7 +1630,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 0
+        y: 32
         width: 32
         height: 32
       alignment: 0
@@ -1652,7 +1652,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 0
+        y: 32
         width: 32
         height: 32
       alignment: 0
@@ -1665,6 +1665,94 @@ TextureImporter:
       bones: []
       spriteID: 2e2264ae81771224e9bb4c084957e70d
       internalID: -796304000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_Bowman_70
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bc57b443e09f1247bd0cbc9dba887db
+      internalID: 1826975755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_Bowman_71
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 712b715c906d3894aba01830b13a9cfd
+      internalID: -49572453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_Bowman_72
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20b128e08d233cb44b3c008af04e1c1e
+      internalID: 1886222745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_Bowman_73
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 403aae3141091b844a21586b4d426f57
+      internalID: -1718732064
       vertices: []
       indices: 
       edges: []
@@ -1751,6 +1839,10 @@ TextureImporter:
       Skeleton_Bowman_68: 168138845
       Skeleton_Bowman_69: -796304000
       Skeleton_Bowman_7: 681246086
+      Skeleton_Bowman_70: 1826975755
+      Skeleton_Bowman_71: -49572453
+      Skeleton_Bowman_72: 1886222745
+      Skeleton_Bowman_73: -1718732064
       Skeleton_Bowman_8: 361091291
       Skeleton_Bowman_9: 1837652332
   mipmapLimitGroupName: 

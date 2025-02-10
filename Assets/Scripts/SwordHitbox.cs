@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 public class SwordHitbox : MonoBehaviour
 {
-    public int swordDamage = 1;
+    public int damage = 0;
+    public float knockbackForce = 3;	
     public Vector3 faceBot = new Vector3(0, 0, 0);
     public Vector3 faceTop = new Vector3(0, 1, 0);
     public Vector3 faceLeft = new Vector3(0, 0, 0);
@@ -18,7 +19,8 @@ public class SwordHitbox : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collider)
     {
-        collider.SendMessage("OnHit", swordDamage);
+        collider.SendMessage("OnKnockback", knockbackForce);
+        collider.SendMessage("OnHit", damage);
     }
     void FacingTop(bool FacingTop)
     {
