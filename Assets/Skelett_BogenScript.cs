@@ -1,8 +1,10 @@
 using UnityEngine;
+using System.Collections;
 
 public class Skelett_BogenScript : MonoBehaviour
 {
-    private Transform player;              // Referenz zum Spieler
+    private Transform player;
+    private bool isMoving;              // Referenz zum Spieler
     private Rigidbody2D rb;               // Rigidbody des Skeletts
     private Animator animator;             // Animator des Skeletts
     
@@ -13,6 +15,15 @@ public class Skelett_BogenScript : MonoBehaviour
     private bool playerInRange = false;    // Ist der Spieler in Reichweite?
     private Vector2 movement;              // Bewegungsrichtung
     
+    public float health = 5f;
+    public float knockbackResistance = 1f;  // Wie stark der Knockback reduziert wird
+
+    public float Health
+    {
+        get { return health; }
+        set { health = value; }
+    }
+
     void Start()
     {
         // Komponenten initialisieren
@@ -87,5 +98,38 @@ public class Skelett_BogenScript : MonoBehaviour
         
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, preferredRange);
+    }
+
+    void OnHit(float damage)
+    {
+        Debug.Log("Skelett hit for " + damage);
+        Health -= (int)damage;
+        if (health <= 0)
+        {
+            if (animator != null)
+            {
+                animator.SetTrigger("death");
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
+
+    void OnKnockback(float knockbackForce)
+    {
+        Debug.Log("Skelett knockbacked for " + knockbackForce);
+        Vector2 direction = (transform.position - player.position).normalized;
+        rb.linearVelocity = Vector2.zero; // Aktuelle Geschwindigkeit zurücksetzen
+        rb.AddForce(direction * (knockbackForce / knockbackResistance), ForceMode2D.Impulse);
+        StartCoroutine(KnockbackPause());
+    }
+
+    private IEnumerator KnockbackPause()
+    {
+        playerInRange = false;
+        yield return new WaitForSeconds(0.2f);
+        playerInRange = true;
     }
 }

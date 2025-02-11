@@ -6126,6 +6126,7 @@ GameObject:
   - component: {fileID: 1071628535}
   - component: {fileID: 1071628534}
   - component: {fileID: 1071628533}
+  - component: {fileID: 1071628537}
   m_Layer: 0
   m_Name: Skelett_Bogen
   m_TagString: Untagged
@@ -6182,8 +6183,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.02, y: -0.29}
-  m_Size: {x: 0.60212594, y: 0.33}
+  m_Offset: {x: 0.04, y: -0.32}
+  m_Size: {x: 0.45, y: 0.3}
   m_Direction: 1
 --- !u!50 &1071628534
 Rigidbody2D:
@@ -6282,6 +6283,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1071628537
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071628531}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1ab1cea8e8f260941a25c9c405a02b69, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1081634419
 GameObject:
   m_ObjectHideFlags: 0
