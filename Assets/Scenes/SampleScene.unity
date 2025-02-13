@@ -4854,7 +4854,7 @@ Transform:
   m_GameObject: {fileID: 907959864}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.09336, y: 11.540159, z: 0}
+  m_LocalPosition: {x: -1.1585746, y: 1.9888306, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6225,9 +6225,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604e2c4a96a278744b5017f99cd8e65a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootCooldown: 2
   detectionRange: 8
-  preferredRange: 4
+  preferredRange: 5
   moveSpeed: 1
+  health: 5
+  knockbackResistance: 1
+  pfeilPrefab: {fileID: 684775049372625069, guid: e253a53a358647f498061610ab8103e4, type: 3}
+  pfeilSpeed: 7
 --- !u!212 &1071628536
 SpriteRenderer:
   m_ObjectHideFlags: 0

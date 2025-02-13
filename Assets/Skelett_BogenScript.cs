@@ -3,21 +3,21 @@ using System.Collections;
 
 public class Skelett_BogenScript : MonoBehaviour
 {
-    private Transform player;
-    private bool isMoving;              // Referenz zum Spieler
+    private Transform player;          // Neue Variable für den Schuss-Cooldown
+    public float shootCooldown = 4f;        // Cooldown-Zeit zwischen Schüssen    private bool isMoving;              // Referenz zum Spieler
     private Rigidbody2D rb;               // Rigidbody des Skeletts
     private Animator animator;             // Animator des Skeletts
-    
     public float detectionRange = 14f;     // Erkennungsreichweite
     public float preferredRange = 8f;      // Bevorzugte Kampfdistanz
     public float moveSpeed = 3f;           // Bewegungsgeschwindigkeit
-    
     private bool playerInRange = false;    // Ist der Spieler in Reichweite?
     private Vector2 movement;              // Bewegungsrichtung
-    
     public float health = 5f;
     public float knockbackResistance = 1f;  // Wie stark der Knockback reduziert wird
-
+    public GameObject pfeilPrefab;        // Prefab des Pfeils
+    public float pfeilSpeed = 10f;        // Geschwindigkeit des Pfeils
+    private float nextShootTime;          // Zeitpunkt des nächsten Schusses
+    private bool canMove = true;  // Neue Variable für Bewegungskontrolle
     public float Health
     {
         get { return health; }
@@ -32,52 +32,55 @@ public class Skelett_BogenScript : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    void Update()
+     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            ShootArrowAnimation();
+        }
         if (player == null) return;
 
-        // Distanz zum Spieler berechnen
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
         
-        // Prüfen ob Spieler in Erkennungsreichweite ist
-        if (distanceToPlayer <= detectionRange)
+        if (distanceToPlayer <= detectionRange && canMove)  // Prüfe canMove
         {
             playerInRange = true;
+            HandleMovement(distanceToPlayer);
             
-            // Wenn weiter weg als bevorzugte Reichweite, nähere dich an
-            if (distanceToPlayer > preferredRange)
+            if (Time.time >= nextShootTime) 
             {
-                // Bewegungsrichtung zum Spieler berechnen
-                Vector2 direction = (player.position - transform.position).normalized;
-                movement = direction * moveSpeed;
-                
-                // Animation Parameter setzen (falls vorhanden)
-                if (animator != null)
-                {
-                    animator.SetFloat("moveX", direction.x);
-                    animator.SetFloat("moveY", direction.y);
-                    animator.SetBool("isMoving", true);
-                }
-            }
-            else
-            {
-                // Wenn in bevorzugter Reichweite, stoppe Bewegung
-                movement = Vector2.zero;
-                if (animator != null)
-                {
-                    animator.SetBool("isMoving", false);
-                }
+                animator?.SetTrigger("Attack");
+                StartCoroutine(LockMovementDuringAttack());  // Neue Coroutine
+                ShootArrowAnimation();
+                nextShootTime = Time.time + shootCooldown;
+                Debug.Log("Skelett schießt");
             }
         }
         else
         {
-            // Außerhalb der Erkennungsreichweite
             playerInRange = false;
             movement = Vector2.zero;
+            animator?.SetBool("isMoving", false);
+        }
+    }
+    private void HandleMovement(float distanceToPlayer)
+    {
+        if (distanceToPlayer > preferredRange)
+        {
+            Vector2 direction = (player.position - transform.position).normalized;
+            movement = direction * moveSpeed;
+            
             if (animator != null)
             {
-                animator.SetBool("isMoving", false);
+                animator.SetFloat("moveX", direction.x);
+                animator.SetFloat("moveY", direction.y);
+                animator.SetBool("isMoving", true);
             }
+        }
+        else
+        {
+            movement = Vector2.zero;
+            animator?.SetBool("isMoving", false);
         }
     }
 
@@ -117,19 +120,38 @@ public class Skelett_BogenScript : MonoBehaviour
         }
     }
 
-    void OnKnockback(float knockbackForce)
+    private IEnumerator LockMovementDuringAttack()
     {
-        Debug.Log("Skelett knockbacked for " + knockbackForce);
-        Vector2 direction = (transform.position - player.position).normalized;
-        rb.linearVelocity = Vector2.zero; // Aktuelle Geschwindigkeit zurücksetzen
-        rb.AddForce(direction * (knockbackForce / knockbackResistance), ForceMode2D.Impulse);
-        StartCoroutine(KnockbackPause());
+        yield return new WaitForSeconds(0.9f);  // Gleiche Zeit wie in der Pause-Funktion
     }
 
-    private IEnumerator KnockbackPause()
+    // Der Pfeil wird nur durch diese Funktion geschossen, die von der Animation aufgerufen wird
+    void ShootArrowAnimation()
     {
-        playerInRange = false;
-        yield return new WaitForSeconds(0.2f);
-        playerInRange = true;
+        if (player == null) return;
+        
+        GameObject pfeil = Instantiate(pfeilPrefab, transform.position, Quaternion.identity);
+        Vector2 direction = (player.position - transform.position).normalized;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        pfeil.transform.rotation = Quaternion.Euler(0, 0, angle);
+        
+        Rigidbody2D pfeilRb = pfeil.GetComponent<Rigidbody2D>();
+        pfeilRb.linearVelocity = direction * pfeilSpeed;
+        
+        Destroy(pfeil, 15f / pfeilSpeed);
+        Debug.Log("Pfeil geschossen");
+        
+    }
+    void ShootArrowText()
+    {
+        Debug.Log("Pfeil Animation");
+    }
+    void LockMovement()
+    {
+        canMove = false;
+    }
+    void UnlockMovement()
+    {
+        canMove = true;
     }
 }
