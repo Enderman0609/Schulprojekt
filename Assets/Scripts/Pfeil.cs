@@ -2,14 +2,21 @@ using UnityEngine;
 
 public class pfeilPrefab : MonoBehaviour
 {
-    public float damage = 1f;
+    public int damage;
+    public int knockbackForce = 3;
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D collider)
     {
-        if (other.CompareTag("Player"))
+        if (collider.gameObject.CompareTag("Player"))
         {
-            // Schaden am Spieler verursachen
-            other.SendMessage("OnHit", damage, SendMessageOptions.DontRequireReceiver);
+            Damage damageComponent = collider.gameObject.GetComponent<Damage>();
+            if (damageComponent != null)
+            {
+                damageComponent.DealDamage(damage);
+                Debug.Log("Enemy hit");
+                damageComponent.Knockback(knockbackForce);
+                Debug.Log("knockbackForce: " + knockbackForce);
+            }
             Destroy(gameObject);
         }
     }

@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  knockbackForce: 5
+  knockbackForce: 3
   faceBot: {x: 0, y: 0, z: 0}
   faceTop: {x: 0, y: 1, z: 0}
   faceLeft: {x: 0, y: 0, z: 90}
@@ -3352,7 +3352,7 @@ GameObject:
   - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4783,6 +4783,7 @@ GameObject:
   - component: {fileID: 907959868}
   - component: {fileID: 907959869}
   - component: {fileID: 907959870}
+  - component: {fileID: 907959872}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4876,10 +4877,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rbp: {fileID: 907959868}
   moveSpeed: 2
-  knockbackForce: 10
-  Playerhealth: 10
   SwordHitbox: {fileID: 12124355}
-  knockbackResistance: 10
 --- !u!50 &907959868
 Rigidbody2D:
   serializedVersion: 5
@@ -4966,6 +4964,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &907959872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907959864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4396991cab48cd4cb04d209a3e60a6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  knockbackForce: 10
+  Health: 100
+  rbp: {fileID: 907959868}
 --- !u!1 &921507590
 GameObject:
   m_ObjectHideFlags: 0
@@ -6127,9 +6141,10 @@ GameObject:
   - component: {fileID: 1071628534}
   - component: {fileID: 1071628533}
   - component: {fileID: 1071628537}
+  - component: {fileID: 1071628538}
   m_Layer: 0
   m_Name: Skelett_Bogen
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6199,7 +6214,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 30
-  m_LinearDamping: 0
+  m_LinearDamping: 5
   m_AngularDamping: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -6226,13 +6241,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootCooldown: 2
-  detectionRange: 8
-  preferredRange: 5
+  detectionRange: 6
+  preferredRange: 1
   moveSpeed: 1
-  health: 5
-  knockbackResistance: 1
   pfeilPrefab: {fileID: 684775049372625069, guid: e253a53a358647f498061610ab8103e4, type: 3}
   pfeilSpeed: 7
+  Health: 0
 --- !u!212 &1071628536
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6310,6 +6324,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1071628538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071628531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4396991cab48cd4cb04d209a3e60a6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  knockbackForce: 3
+  Health: 30
+  rbp: {fileID: 907959868}
 --- !u!1 &1081634419
 GameObject:
   m_ObjectHideFlags: 0
@@ -9038,9 +9068,10 @@ GameObject:
   - component: {fileID: 1623257939}
   - component: {fileID: 1623257940}
   - component: {fileID: 1623257941}
+  - component: {fileID: 1623257943}
   m_Layer: 0
   m_Name: Slime
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9149,12 +9180,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e571861e7a90e1c43a8a7bc77d6c889c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackForce: 30
-  slimedamage: 0
+  knockbackForce: 0
+  damage: 0
   isMoving: 0
   speed: 1
   SlimeCollider: {fileID: 1623257941}
-  health: 5
 --- !u!50 &1623257940
 Rigidbody2D:
   serializedVersion: 5
@@ -9167,8 +9197,8 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10
-  m_LinearDamping: 3.23
+  m_Mass: 30
+  m_LinearDamping: 5
   m_AngularDamping: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -9218,6 +9248,22 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: -0.04, y: -0.12}
   m_Radius: 0.36
+--- !u!114 &1623257943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623257935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4396991cab48cd4cb04d209a3e60a6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
+  knockbackForce: 1
+  Health: 50
+  rbp: {fileID: 907959868}
 --- !u!1 &1693386900
 GameObject:
   m_ObjectHideFlags: 0

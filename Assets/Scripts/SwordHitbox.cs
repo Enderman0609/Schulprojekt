@@ -3,8 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 public class SwordHitbox : MonoBehaviour
 {
-    public int damage = 0;
-    public float knockbackForce = 3;	
+    public int damage;
+    public int knockbackForce = 3;	
     public Vector3 faceBot = new Vector3(0, 0, 0);
     public Vector3 faceTop = new Vector3(0, 1, 0);
     public Vector3 faceLeft = new Vector3(0, 0, 0);
@@ -17,11 +17,19 @@ public class SwordHitbox : MonoBehaviour
             Debug.LogWarning("Sword Collider not set");
         }
     }
-    void OnTriggerEnter2D(Collider2D collider)
+void OnTriggerEnter2D(Collider2D collider)
+{
+    if (collider.gameObject.CompareTag("Enemy"))
     {
-        collider.SendMessage("OnKnockback", knockbackForce);
-        collider.SendMessage("OnHit", damage);
+        Damage damageComponent = collider.gameObject.GetComponent<Damage>();
+        if (damageComponent != null)
+        {
+            damageComponent.DealDamage(damage);
+            Debug.Log("Schlag");
+            damageComponent.Knockback(knockbackForce);
+        }
     }
+}
     void FacingTop(bool FacingTop)
     {
         if (FacingTop == true)

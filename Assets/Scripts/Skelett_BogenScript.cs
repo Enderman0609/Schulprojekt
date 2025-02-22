@@ -4,7 +4,7 @@ using System.Collections;
 public class Skelett_BogenScript : MonoBehaviour
 {
     private Transform player;          // Neue Variable für den Schuss-Cooldown
-    public float shootCooldown = 4f;        // Cooldown-Zeit zwischen Schüssen    private bool isMoving;              // Referenz zum Spieler
+    public float shootCooldown;        // Cooldown-Zeit zwischen Schüssen    private bool isMoving;              // Referenz zum Spieler
     private Rigidbody2D rb;               // Rigidbody des Skeletts
     private Animator animator;             // Animator des Skeletts
     public float detectionRange = 14f;     // Erkennungsreichweite
@@ -12,21 +12,14 @@ public class Skelett_BogenScript : MonoBehaviour
     public float moveSpeed = 3f;           // Bewegungsgeschwindigkeit
     private bool playerInRange = false;    // Ist der Spieler in Reichweite?
     private Vector2 movement;              // Bewegungsrichtung
-    public float health = 5f;
-    public float knockbackResistance = 1f;  // Wie stark der Knockback reduziert wird
     public GameObject pfeilPrefab;        // Prefab des Pfeils
     public float pfeilSpeed = 10f;        // Geschwindigkeit des Pfeils
     private float nextShootTime;          // Zeitpunkt des nächsten Schusses
     private bool canMove = true;  // Neue Variable für Bewegungskontrolle
-    public float Health
-    {
-        get { return health; }
-        set { health = value; }
-    }
+    public int Health;
 
     void Start()
     {
-        // Komponenten initialisieren
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -34,26 +27,23 @@ public class Skelett_BogenScript : MonoBehaviour
 
      void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            ShootArrowAnimation();
-        }
         if (player == null) return;
 
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
         
-        if (distanceToPlayer <= detectionRange && canMove)  // Prüfe canMove
+        if (distanceToPlayer <= detectionRange)
         {
             playerInRange = true;
             HandleMovement(distanceToPlayer);
             
             if (Time.time >= nextShootTime) 
             {
+                canMove = false;
                 animator?.SetTrigger("Attack");
-                StartCoroutine(LockMovementDuringAttack());  // Neue Coroutine
-                ShootArrowAnimation();
+                StartCoroutine(WaitBeforeShoot());
                 nextShootTime = Time.time + shootCooldown;
-                Debug.Log("Skelett schießt");
+                //Debug.Log("Skelett schießt");
+                canMove = true;
             }
         }
         else
@@ -63,9 +53,16 @@ public class Skelett_BogenScript : MonoBehaviour
             animator?.SetBool("isMoving", false);
         }
     }
+private IEnumerator WaitBeforeShoot()
+{
+    // Wartet für eine kurze Zeit (z.B. 0.5 Sekunden)
+    yield return new WaitForSeconds(1.6f);
+    // Führt den Schuss aus
+    ShootArrowAnimation();
+}
     private void HandleMovement(float distanceToPlayer)
     {
-        if (distanceToPlayer > preferredRange)
+        if (distanceToPlayer > preferredRange && canMove)
         {
             Vector2 direction = (player.position - transform.position).normalized;
             movement = direction * moveSpeed;
@@ -86,7 +83,7 @@ public class Skelett_BogenScript : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (playerInRange)
+        if (playerInRange && canMove)
         {
             // Bewegung ausführen
             rb.MovePosition(rb.position + movement * Time.fixedDeltaTime);
@@ -103,28 +100,6 @@ public class Skelett_BogenScript : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, preferredRange);
     }
 
-    void OnHit(float damage)
-    {
-        Debug.Log("Skelett hit for " + damage);
-        Health -= (int)damage;
-        if (health <= 0)
-        {
-            if (animator != null)
-            {
-                animator.SetTrigger("death");
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
-        }
-    }
-
-    private IEnumerator LockMovementDuringAttack()
-    {
-        yield return new WaitForSeconds(0.9f);  // Gleiche Zeit wie in der Pause-Funktion
-    }
-
     // Der Pfeil wird nur durch diese Funktion geschossen, die von der Animation aufgerufen wird
     void ShootArrowAnimation()
     {
@@ -139,12 +114,12 @@ public class Skelett_BogenScript : MonoBehaviour
         pfeilRb.linearVelocity = direction * pfeilSpeed;
         
         Destroy(pfeil, 15f / pfeilSpeed);
-        Debug.Log("Pfeil geschossen");
+        //Debug.Log("Pfeil geschossen");
         
     }
     void ShootArrowText()
     {
-        Debug.Log("Pfeil Animation");
+        //Debug.Log("Pfeil Animation");
     }
     void LockMovement()
     {
