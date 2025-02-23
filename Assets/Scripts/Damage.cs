@@ -13,13 +13,11 @@ public class Damage : MonoBehaviour
     }
     public void Start()
     {
-        rbp = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
+
     }
     public void DealDamage(int damage)
     {
-        Debug.Log(damage);
         Health -= damage;
-        Debug.Log(Health);
         if (gameObject.CompareTag("Enemy"))
         {
             if (Health <= 0)
@@ -39,38 +37,44 @@ public class Damage : MonoBehaviour
         }
     }
 
-    public void Knockback(int knockbackForce)
+    public void KnockbackEnemy(int knockbackForce)
     {
-        if (gameObject.CompareTag("Enemy"))
+        Rigidbody2D enemyRb = GetComponent<Rigidbody2D>();
+        if (gameObject.CompareTag("Enemy") && rbp != null)
         {
-            // Hole die Rigidbody2D-Komponente einmal und speichere sie
-            Rigidbody2D enemyRb = GetComponent<Rigidbody2D>();
-
-            // Überprüfe ob der Rigidbody2D nicht kinematic ist und die Masse nicht zu hoch
-            if (enemyRb != null)
-            {
-                Vector2 knockbackDirection = (transform.position - rbp.transform.position).normalized;
-
-                // Erhöhe die Kraft durch Multiplikation
-                float appliedForce = knockbackForce * 75f;
-                enemyRb.AddForce(knockbackDirection * appliedForce, ForceMode2D.Impulse);
-            }
+            Vector2 knockbackDirection = (transform.position - rbp.transform.position).normalized;
+            Debug.Log("knockbackDirection: " + knockbackDirection);
+            float appliedForce = knockbackForce * 75f;
+            Debug.Log("appliedForce: " + appliedForce);
+            GetComponent<Rigidbody2D>().AddForce(knockbackDirection * appliedForce, ForceMode2D.Impulse);
+            Debug.Log("KnockbackEnemy");
         }
+    }
+    public void KnockbackPlayer(int knockbackForce, Transform enemy)
+    {
         if (gameObject.CompareTag("Player"))
         {
-            // Hole die Rigidbody2D-Komponente des Spielers
-            Rigidbody2D playerRb = GetComponent<Rigidbody2D>();
-
-            // Überprüfe ob der Rigidbody2D nicht null ist
-            if (playerRb != null)
-            {
-                // Berechne die Richtung weg vom Enemy
-                Vector2 knockbackDirection = (playerRb.transform.position - transform.position).normalized;
-
-                // Erhöhe die Kraft durch Multiplikation
-                float appliedForce = knockbackForce * 75f;
-                playerRb.AddForce(knockbackDirection * appliedForce, ForceMode2D.Impulse);
-            }
+            Vector2 knockbackDirection = (transform.position - enemy.position).normalized;
+            Debug.Log("knockbackForce: " + knockbackForce);
+            float appliedForce = knockbackForce * 75f;
+            Debug.Log("knockbackDirection: " + knockbackDirection);
+            GetComponent<Rigidbody2D>().AddForce(knockbackDirection * appliedForce, ForceMode2D.Impulse);
+            Debug.Log("KnockbackPlayer");
+            Debug.Log("appliedForce: " + appliedForce);
+        }
+    }
+    public void KnockbackBothEnemy(int knockbackForce, Transform enemy)
+    {
+        if (gameObject.CompareTag("Enemy") && (enemy != null))
+        {
+            Vector2 knockbackDirection = (transform.position - enemy.position).normalized;
+            Debug.Log("transform.position: " + transform.position);
+            Debug.Log("enemy.position: " + enemy.position);
+            Debug.Log("knockbackDirection: " + knockbackDirection);
+            float appliedForce = knockbackForce * 75f;
+            GetComponent<Rigidbody2D>().AddForce(knockbackDirection * appliedForce, ForceMode2D.Impulse);
+            Debug.Log("KnockbackBothEnemy");
+            Debug.Log("appliedForce: " + appliedForce);
         }
     }
     private void DestroyEntity()
