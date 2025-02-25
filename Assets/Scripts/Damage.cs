@@ -2,19 +2,20 @@ using UnityEngine;
 
 public class Damage : MonoBehaviour
 {
-    public int damage;
-    public int knockbackForce;
+    private int damage;
+    private int knockbackForce;
     private Animator animator;
+    public bool alive = true;
     public int Health;
-    public Rigidbody2D rbp;
+    public Rigidbody2D PlayerRigidbody;
     private void Awake()
     {
         animator = GetComponent<Animator>();
     }
-    public void Start()
+    void Update()
     {
-
     }
+
     public void DealDamage(int damage)
     {
         Health -= damage;
@@ -30,6 +31,7 @@ public class Damage : MonoBehaviour
         {
             if (Health <= 0)
             {
+                alive = false;
                 animator.SetTrigger("death");
                 Debug.Log("Spieler ist tot");
                 GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
@@ -40,9 +42,9 @@ public class Damage : MonoBehaviour
     public void KnockbackEnemy(int knockbackForce)
     {
         Rigidbody2D enemyRb = GetComponent<Rigidbody2D>();
-        if (gameObject.CompareTag("Enemy") && rbp != null)
+        if (gameObject.CompareTag("Enemy") && enemyRb != null)
         {
-            Vector2 knockbackDirection = (transform.position - rbp.transform.position).normalized;
+            Vector2 knockbackDirection = (transform.position - PlayerRigidbody.transform.position).normalized;
             Debug.Log("knockbackDirection: " + knockbackDirection);
             float appliedForce = knockbackForce * 75f;
             Debug.Log("appliedForce: " + appliedForce);

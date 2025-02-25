@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 724e66dbeb39e724da91ee8f8fac81a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 10
   knockbackForce: 3
   faceBot: {x: 0, y: 0, z: 0}
   faceTop: {x: 0, y: 1, z: 0}
@@ -4876,8 +4876,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e101e3f388f82da4fb713d501c42623e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rbp: {fileID: 907959868}
-  moveSpeed: 2
+  PlayerRigidbody: {fileID: 907959868}
+  moveSpeed: 10
+  pfeilPrefab: {fileID: 684775049372625069, guid: e253a53a358647f498061610ab8103e4, type: 3}
+  detectionRange: 8
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
   SwordHitbox: {fileID: 12124355}
 --- !u!50 &907959868
 Rigidbody2D:
@@ -4893,7 +4898,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 30
   m_LinearDamping: 5
-  m_AngularDamping: 0.05
+  m_AngularDamping: 5
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -4977,10 +4982,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4396991cab48cd4cb04d209a3e60a6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  knockbackForce: 10
+  alive: 1
   Health: 100
-  rbp: {fileID: 907959868}
+  PlayerRigidbody: {fileID: 907959868}
 --- !u!70 &907959873
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -6180,7 +6184,7 @@ GameObject:
   - component: {fileID: 1071628533}
   - component: {fileID: 1071628537}
   - component: {fileID: 1071628538}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Skelett_Bogen
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -6285,6 +6289,7 @@ MonoBehaviour:
   pfeilPrefab: {fileID: 684775049372625069, guid: e253a53a358647f498061610ab8103e4, type: 3}
   pfeilSpeed: 7
   Health: 0
+  alive: 1
 --- !u!212 &1071628536
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6374,10 +6379,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4396991cab48cd4cb04d209a3e60a6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  knockbackForce: 3
+  alive: 1
   Health: 30
-  rbp: {fileID: 907959868}
+  PlayerRigidbody: {fileID: 907959868}
 --- !u!1 &1081634419
 GameObject:
   m_ObjectHideFlags: 0
@@ -9108,7 +9112,7 @@ GameObject:
   - component: {fileID: 1623257941}
   - component: {fileID: 1623257943}
   - component: {fileID: 1623257944}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Slime
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -9219,11 +9223,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e571861e7a90e1c43a8a7bc77d6c889c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackForce: 20
+  knockbackForce: 5
   damage: 0
   isMoving: 0
   speed: 1
   SlimeCollider: {fileID: 1623257941}
+  alive: 1
 --- !u!50 &1623257940
 Rigidbody2D:
   serializedVersion: 5
@@ -9299,10 +9304,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4396991cab48cd4cb04d209a3e60a6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  knockbackForce: 0
+  alive: 1
   Health: 50
-  rbp: {fileID: 907959868}
+  PlayerRigidbody: {fileID: 907959868}
 --- !u!58 &1623257944
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -9706,63 +9710,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!1001 &1774384711
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 684775049372625069, guid: e253a53a358647f498061610ab8103e4, type: 3}
-      propertyPath: m_Name
-      value: pfeilPrefab
-      objectReference: {fileID: 0}
-    - target: {fileID: 6209488588939278540, guid: e253a53a358647f498061610ab8103e4, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.29784274
-      objectReference: {fileID: 0}
-    - target: {fileID: 6209488588939278540, guid: e253a53a358647f498061610ab8103e4, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.0819664
-      objectReference: {fileID: 0}
-    - target: {fileID: 6209488588939278540, guid: e253a53a358647f498061610ab8103e4, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6209488588939278540, guid: e253a53a358647f498061610ab8103e4, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6209488588939278540, guid: e253a53a358647f498061610ab8103e4, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6209488588939278540, guid: e253a53a358647f498061610ab8103e4, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6209488588939278540, guid: e253a53a358647f498061610ab8103e4, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6209488588939278540, guid: e253a53a358647f498061610ab8103e4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6209488588939278540, guid: e253a53a358647f498061610ab8103e4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6209488588939278540, guid: e253a53a358647f498061610ab8103e4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -90
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e253a53a358647f498061610ab8103e4, type: 3}
 --- !u!1 &1814361509
 GameObject:
   m_ObjectHideFlags: 0
@@ -30252,4 +30199,3 @@ SceneRoots:
   - {fileID: 907959866}
   - {fileID: 117121378}
   - {fileID: 1549710651}
-  - {fileID: 1774384711}

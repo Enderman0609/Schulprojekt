@@ -17,6 +17,7 @@ public class Skelett_BogenScript : MonoBehaviour
     private float nextShootTime;          // Zeitpunkt des nächsten Schusses
     private bool canMove = true;  // Neue Variable für Bewegungskontrolle
     public int Health;
+    public bool alive = true;
 
     void Start()
     {
@@ -58,7 +59,10 @@ private IEnumerator WaitBeforeShoot()
     // Wartet für eine kurze Zeit (z.B. 0.5 Sekunden)
     yield return new WaitForSeconds(1.6f);
     // Führt den Schuss aus
-    ShootArrowAnimation();
+    if (alive == true)
+    {
+        ShootArrowAnimation();
+    }
 }
     private void HandleMovement(float distanceToPlayer)
     {
@@ -109,6 +113,13 @@ private IEnumerator WaitBeforeShoot()
         Vector2 direction = (player.position - transform.position).normalized;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         pfeil.transform.rotation = Quaternion.Euler(0, 0, angle);
+
+        Collider2D pfeilCollider = pfeil.GetComponent<Collider2D>();
+        if (pfeilCollider != null)
+        {
+            pfeilCollider.enabled = false;
+            StartCoroutine(EnableColliderAfterDelay(pfeilCollider, 0.15f));
+        }
         
         Rigidbody2D pfeilRb = pfeil.GetComponent<Rigidbody2D>();
         pfeilRb.linearVelocity = direction * pfeilSpeed;
@@ -116,6 +127,11 @@ private IEnumerator WaitBeforeShoot()
         Destroy(pfeil, 15f / pfeilSpeed);
         //Debug.Log("Pfeil geschossen");
         
+    }
+    IEnumerator EnableColliderAfterDelay(Collider2D collider, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        collider.enabled = true;
     }
     void ShootArrowText()
     {
