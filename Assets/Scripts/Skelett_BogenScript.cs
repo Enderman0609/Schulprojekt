@@ -66,7 +66,7 @@ private IEnumerator WaitBeforeShoot()
 }
     private void HandleMovement(float distanceToPlayer)
     {
-        if (distanceToPlayer > preferredRange && canMove)
+        if (distanceToPlayer > preferredRange && canMove && alive)
         {
             Vector2 direction = (player.position - transform.position).normalized;
             movement = direction * moveSpeed;

@@ -23,7 +23,7 @@ public class Slimescript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector2.Distance(transform.position, target.position) < 8 && canMove == true)
+        if (Vector2.Distance(transform.position, target.position) < 8 && canMove && alive)
         {
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
             animator.SetBool("isMoving", true);

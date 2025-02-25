@@ -12,9 +12,10 @@ public class PlayerControls : MonoBehaviour
     public float moveSpeed;
     float speedX, speedY;
     private bool isMoving;
+    private bool BowAttack;
     bool canMove = true;
     private float holdTime = 0;
-    private const float HOLD_TIME_LIMIT = 2f;
+    private const float HOLD_TIME_LIMIT = 1.6f;
     public GameObject pfeilPrefab;
     private Transform nearestEnemy;
     public float detectionRange = 8f;
@@ -85,15 +86,65 @@ public class PlayerControls : MonoBehaviour
         if (Input.GetMouseButton(1))
         {
             holdTime += Time.deltaTime;
+            LockMovement();
+            
+            // Trigger nur beim ersten Drücken setzen, nicht in jedem Frame
+            if (holdTime <= Time.deltaTime)
+            {
+                // Finde den nächsten Gegner und drehe dich in seine Richtung
+                FindNearestEnemy();
+                if (nearestEnemy != null)
+                {
+                    // Berechne Richtung zum Gegner
+                    Vector2 directionToEnemy = (nearestEnemy.position - transform.position).normalized;
+                    
+                    // Setze die Bewegungsrichtung für die Animation
+                    animator.SetFloat("moveX", directionToEnemy.x);
+                    animator.SetFloat("moveY", directionToEnemy.y);
+                    
+                    // Aktualisiere die Blickrichtung
+                    if (Mathf.Abs(directionToEnemy.x) < Mathf.Abs(directionToEnemy.y))
+                    {
+                        if (directionToEnemy.y > 0)
+                        {
+                            gameObject.BroadcastMessage("FacingTop", true);
+                        }
+                        else
+                        {
+                            gameObject.BroadcastMessage("FacingBot", true);
+                        }
+                    }
+                    else
+                    {
+                        if (directionToEnemy.x < 0)
+                        {
+                            gameObject.BroadcastMessage("FacingLeft", true);
+                        }
+                        else
+                        {
+                            gameObject.BroadcastMessage("FacingRight", true);
+                        }
+                    }
+                }
+                
+                BowAttack = true;
+            }
+            
+            animator.SetBool("BowAttack", BowAttack);
+            
             if (holdTime >= HOLD_TIME_LIMIT)
             {
                 ShootArrowAnimation();
                 holdTime = 0;
+                // Rechte Maustaste muss losgelassen und erneut gedrückt werden
+                StartCoroutine(DisableShootingBriefly());
             }
         }
         else if (Input.GetMouseButtonUp(1))
         {
-            holdTime = 0;
+            holdTime = 0;   
+            UnlockMovement();
+            animator.SetBool("BowAttack", false);
         }
         FindNearestEnemy();
 
@@ -124,24 +175,48 @@ public class PlayerControls : MonoBehaviour
 
         nearestEnemy = nearestEnemyFound;
     }
+    // Neue Methode, um kurzzeitig das Schießen zu deaktivieren
+    private bool canShoot = true;
+    
+    IEnumerator DisableShootingBriefly()
+    {
+        canShoot = false;
+        yield return new WaitForSeconds(0.5f);
+        canShoot = true;
+    }
+    
     void ShootArrowAnimation()
     {
-        GameObject pfeil = Instantiate(pfeilPrefab, transform.position, Quaternion.identity);
-        Vector2 direction = Vector2.zero;
-        Debug.Log("Nearest Enemy: " + nearestEnemy);
-
-        if (nearestEnemy != null)
+        // Nur schießen, wenn ein Gegner in Reichweite ist und Schießen erlaubt ist
+        if (nearestEnemy == null || !canShoot)
         {
-            // Schieße auf den nächsten Gegner
-            direction = (nearestEnemy.position - transform.position).normalized;
+            if (nearestEnemy == null)
+            {
+                Debug.Log("Kein Gegner in Reichweite zum Schießen");
+            }
+            return; // Frühzeitig beenden
         }
+
+        GameObject pfeil = Instantiate(pfeilPrefab, transform.position, Quaternion.identity);
+        Vector2 direction = (nearestEnemy.position - transform.position).normalized;
+        Debug.Log("Schieße auf Gegner: " + nearestEnemy.name);
+
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         pfeil.transform.rotation = Quaternion.Euler(0, 0, angle);
+
+        // Füge Geschwindigkeit zum Pfeil hinzu
+        float arrowSpeed = 10f; // Geschwindigkeit des Pfeils
+        Rigidbody2D pfeilRb = pfeil.GetComponent<Rigidbody2D>();
+        if (pfeilRb != null)
+        {
+            pfeilRb.linearVelocity = direction * arrowSpeed;
+        }
+
         Collider2D pfeilCollider = pfeil.GetComponent<Collider2D>();
         if (pfeilCollider != null)
         {
             pfeilCollider.enabled = false;
-            StartCoroutine(EnableColliderAfterDelay(pfeilCollider, 5f));
+            StartCoroutine(EnableColliderAfterDelay(pfeilCollider, 0.15f)); 
         }
     }
     IEnumerator EnableColliderAfterDelay(Collider2D collider, float delay)

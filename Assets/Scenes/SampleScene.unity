@@ -4882,7 +4882,7 @@ MonoBehaviour:
   detectionRange: 8
   enemyLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   SwordHitbox: {fileID: 12124355}
 --- !u!50 &907959868
 Rigidbody2D:
