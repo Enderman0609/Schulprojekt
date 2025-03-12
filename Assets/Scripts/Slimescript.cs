@@ -39,8 +39,6 @@ public class Slimescript : MonoBehaviour
     {
         canMove = false;
     }
-
-    [System.Obsolete]
     void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.CompareTag("Player") && alive == true)

@@ -216,7 +216,7 @@ public class PlayerControls : MonoBehaviour
         if (pfeilCollider != null)
         {
             pfeilCollider.enabled = false;
-            StartCoroutine(EnableColliderAfterDelay(pfeilCollider, 0.15f)); 
+            StartCoroutine(EnableColliderAfterDelay(pfeilCollider, 0.09f)); 
         }
     }
     IEnumerator EnableColliderAfterDelay(Collider2D collider, float delay)

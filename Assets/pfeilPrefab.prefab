@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6209488588939278540}
   - component: {fileID: 7197923110819530431}
-  - component: {fileID: 7971440130983603408}
   - component: {fileID: 5292791780011142523}
   - component: {fileID: -8547634892495984138}
+  - component: {fileID: 1038326022779361569}
   m_Layer: 0
   m_Name: pfeilPrefab
   m_TagString: Untagged
@@ -90,20 +90,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7971440130983603408
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 684775049372625069}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f661af676ea3a7d4fae28ecb1d4e9161, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 10
-  knockbackForce: 3
 --- !u!50 &5292791780011142523
 Rigidbody2D:
   serializedVersion: 5
@@ -165,7 +151,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.2742054, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.6205044, y: 0.5154767}
@@ -175,5 +161,19 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.7, y: 0.1}
+  m_Size: {x: 0.15158921, y: 0.1}
   m_EdgeRadius: 0
+--- !u!114 &1038326022779361569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684775049372625069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3117f482dc8cca04cb5776cbcec3736f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  knockbackForce: 3

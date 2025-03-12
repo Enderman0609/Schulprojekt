@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Schwert
+  - Gegenstand
   layers:
   - Default
   - TransparentFX

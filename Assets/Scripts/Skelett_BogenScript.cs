@@ -118,7 +118,7 @@ private IEnumerator WaitBeforeShoot()
         if (pfeilCollider != null)
         {
             pfeilCollider.enabled = false;
-            StartCoroutine(EnableColliderAfterDelay(pfeilCollider, 0.2f));
+            StartCoroutine(EnableColliderAfterDelay(pfeilCollider, 0.09f));
         }
         
         Rigidbody2D pfeilRb = pfeil.GetComponent<Rigidbody2D>();

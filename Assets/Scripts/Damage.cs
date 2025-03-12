@@ -23,8 +23,9 @@ public class Damage : MonoBehaviour
         {
             if (Health <= 0)
             {
-                animator.SetTrigger("death");
                 GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+                animator.SetTrigger("death");
+                
             }
         }
         if (gameObject.CompareTag("Player"))
