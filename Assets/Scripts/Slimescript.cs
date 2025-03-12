@@ -39,11 +39,11 @@ public class Slimescript : MonoBehaviour
     {
         canMove = false;
     }
-    void OnTriggerEnter2D(Collider2D collider)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collider.gameObject.CompareTag("Player") && alive == true)
+        if (collision.gameObject.CompareTag("Player") && alive == true)
         {
-            Damage damageComponent = collider.gameObject.GetComponent<Damage>();
+            Damage damageComponent = collision.gameObject.GetComponent<Damage>();
             if (damageComponent != null)
             {
                 damageComponent.DealDamage(damage);
@@ -51,9 +51,9 @@ public class Slimescript : MonoBehaviour
                 damageComponent.KnockbackPlayer(knockbackForce, transform);
             }
         }
-        if (collider.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy"))
         {
-            Damage damageComponent = collider.gameObject.GetComponent<Damage>();
+            Damage damageComponent = collision.gameObject.GetComponent<Damage>();
             if (damageComponent != null)
             {
                 damageComponent.DealDamage(damage);

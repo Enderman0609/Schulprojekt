@@ -30,6 +30,7 @@ public class Damage : MonoBehaviour
         }
         if (gameObject.CompareTag("Player"))
         {
+            UnityEngine.Object.FindFirstObjectByType<Healthbar>().UpdateHealthbar(Health);
             if (Health <= 0)
             {
                 alive = false;
