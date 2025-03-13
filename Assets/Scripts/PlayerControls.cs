@@ -34,6 +34,15 @@ public class PlayerControls : MonoBehaviour
 
     void Update()
     {
+        if(Input.GetKey(KeyCode.LeftControl))
+        {
+           moveSpeed = 17f;
+            Debug.Log("Speed: " + moveSpeed);
+        }
+        else
+        {
+            moveSpeed = 10;
+        }
         if (canMove)
         {
             speedX = Input.GetAxis("Horizontal");
