@@ -11,9 +11,7 @@ public class Damage : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
-    }
-    void Update()
-    {
+        PlayerRigidbody = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
     }
 
     public void DealDamage(int damage)

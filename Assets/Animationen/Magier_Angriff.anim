@@ -22,19 +22,19 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: -1242041547, guid: fa6bda2ad6cde2e4dbe7a00c7646ef86, type: 3}
-    - time: 0.2
-      value: {fileID: 56417996, guid: fa6bda2ad6cde2e4dbe7a00c7646ef86, type: 3}
     - time: 0.36666667
+      value: {fileID: 56417996, guid: fa6bda2ad6cde2e4dbe7a00c7646ef86, type: 3}
+    - time: 0.6666667
       value: {fileID: 15990577, guid: fa6bda2ad6cde2e4dbe7a00c7646ef86, type: 3}
-    - time: 0.56666666
+    - time: 1.05
       value: {fileID: -52402620, guid: fa6bda2ad6cde2e4dbe7a00c7646ef86, type: 3}
-    - time: 0.76666665
+    - time: 1.4333333
       value: {fileID: 1843946258, guid: fa6bda2ad6cde2e4dbe7a00c7646ef86, type: 3}
-    - time: 0.96666664
+    - time: 1.8166667
       value: {fileID: -900529439, guid: fa6bda2ad6cde2e4dbe7a00c7646ef86, type: 3}
-    - time: 1.1333333
+    - time: 2.1166666
       value: {fileID: -1445181770, guid: fa6bda2ad6cde2e4dbe7a00c7646ef86, type: 3}
-    - time: 1.3333334
+    - time: 2.4833333
       value: {fileID: -1044264161, guid: fa6bda2ad6cde2e4dbe7a00c7646ef86, type: 3}
     attribute: m_Sprite
     path: 
@@ -71,7 +71,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.35
+    m_StopTime: 2.5
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -90,4 +90,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 1.85
+    functionName: CreateShockwave
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

@@ -56,7 +56,6 @@ public class Slimescript : MonoBehaviour
             Damage damageComponent = collision.gameObject.GetComponent<Damage>();
             if (damageComponent != null)
             {
-                damageComponent.DealDamage(damage);
                 Debug.Log("Enemy hit");
                 damageComponent.KnockbackBothEnemy(knockbackForce, transform);
             }

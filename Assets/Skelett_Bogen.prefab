@@ -111,7 +111,7 @@ MonoBehaviour:
   moveSpeed: 1
   pfeilPrefab: {fileID: 684775049372625069, guid: e253a53a358647f498061610ab8103e4, type: 3}
   pfeilSpeed: 7
-  Health: 0
+  Health: 20
   alive: 1
 --- !u!50 &5445566666729193308
 Rigidbody2D:

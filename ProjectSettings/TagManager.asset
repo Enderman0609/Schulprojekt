@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Schwert
   - Gegenstand
+  - Boss
   layers:
   - Default
   - TransparentFX
