@@ -16,6 +16,6 @@ public class Healthbar : MonoBehaviour
     
     public void UpdateHealthbar(int Health)
     {
-        healthbar.fillAmount = Health / 50f; // Convert to float to avoid integer division
+        healthbar.fillAmount = Health / 120f; // Convert to float to avoid integer division
     }
 }

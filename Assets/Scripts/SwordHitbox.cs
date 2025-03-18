@@ -29,6 +29,15 @@ public class SwordHitbox : MonoBehaviour
                 damageComponent.KnockbackEnemy(knockbackForce);
             }
         }
+        if (collider.gameObject.CompareTag("Boss"))
+        {
+            Damage damageComponent = collider.gameObject.GetComponent<Damage>();
+            if (damageComponent != null)
+            {
+                damageComponent.DealDamage(damage);
+                Debug.Log("Schlag");
+            }
+        }
     }
     void FacingTop(bool FacingTop)
     {

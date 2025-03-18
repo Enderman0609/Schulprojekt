@@ -1,11 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Rendering;
 using UnityEngine;
 
 public class PlayerControls : MonoBehaviour
 {
+    public bool BogenQuestErledigt = false;
     private Animator animator;
     private Transform slimeTransform;
     public Rigidbody2D PlayerRigidbody;
@@ -34,10 +34,9 @@ public class PlayerControls : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKey(KeyCode.LeftControl))
+        if(Input.GetKey(KeyCode.LeftShift))
         {
            moveSpeed = 17f;
-            Debug.Log("Speed: " + moveSpeed);
         }
         else
         {
@@ -92,7 +91,7 @@ public class PlayerControls : MonoBehaviour
                 gameObject.BroadcastMessage("FacingRight", true);
             }
         }
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButton(1) && BogenQuestErledigt)
         {
             holdTime += Time.deltaTime;
             LockMovement();
@@ -232,5 +231,10 @@ public class PlayerControls : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         collider.enabled = true;
+    }
+
+    public void BogenQuest()
+    {
+       BogenQuestErledigt = true;
     }
 }

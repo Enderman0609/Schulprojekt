@@ -210,6 +210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alive: 1
   Health: 50
+  HealthPotion: {fileID: 61010279531495470, guid: c68a780b94109b24b8a15b58bcdd48e2, type: 3}
   PlayerRigidbody: {fileID: 0}
 --- !u!58 &7825467244536602057
 CircleCollider2D:

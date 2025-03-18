@@ -17,7 +17,7 @@ public class End_Boss : MonoBehaviour
     public GameObject skeletonPrefab; // Das Skelett-Prefab
     public GameObject slimePrefab; // Das Slime-Prefab
     public float spawnRadius = 5f; // Radius um den Boss, in dem Mobs spawnen
-    public int maxMobsPerWave = 2; 
+    public int maxMobsPerWave = 1; 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -32,25 +32,25 @@ public class End_Boss : MonoBehaviour
         {
             StartStomp();
         }
-    if (BossHealth <= 800 && Welle == 0)
+    if (BossHealth <= 1000 && Welle == 0)
             {
                 SpawnMobs();
                 Debug.Log("Welle 1");
                 Welle = 1;
             }
-    if (BossHealth <= 600 && Welle == 1)
+    if (BossHealth <= 700 && Welle == 1)
             {
                 SpawnMobs();
                 Debug.Log("Welle 2");
                 Welle = 2;
             }
-    if (BossHealth <= 400 && Welle == 2)
+    if (BossHealth <= 500 && Welle == 2)
             {
                 SpawnMobs();
                 Debug.Log("Welle 3");
                 Welle = 3;
             }
-    if (BossHealth <= 200 && Welle == 3)
+    if (BossHealth <= 300 && Welle == 3)
             {
                 SpawnMobs();
                 Debug.Log("Welle 4");
@@ -101,18 +101,55 @@ public class End_Boss : MonoBehaviour
     }
     void SpawnMobs()
     {
-        // Anzahl der zu spawnenden Mobs basierend auf dem Gesundheitsschwellenwert
-        // Je niedriger die Gesundheit, desto mehr Mobs
-        int mobsToSpawn = Mathf.Min(maxMobsPerWave, Mathf.RoundToInt(maxMobsPerWave * (maxHealth / BossHealth)));
+        // Anzahl der zu spawnenden Mobs basierend auf der Welle
+        int mobsToSpawn;
+        switch (Welle)
+        {
+            case 1:
+                mobsToSpawn = 2;
+                break;
+            case 2:
+                mobsToSpawn = 3; 
+                break;
+            case 3:
+                mobsToSpawn = 4;
+                break;
+            case 4:
+                mobsToSpawn = 5;
+                break;
+            default:
+                mobsToSpawn = 2;
+                break;
+        }
+
+
+
 
         for (int i = 0; i < mobsToSpawn; i++)
         {
-            // Abwechselnd Skelette und Slimes spawnen
-            GameObject prefabToSpawn = (i % 2 == 0) ? skeletonPrefab : slimePrefab;
+            GameObject prefabToSpawn;
+            switch (Welle)
+            {
+                case 1:
+                    prefabToSpawn = slimePrefab; // Nur Slimes in Welle 1
+                    break;
+                case 2:
+                    prefabToSpawn = skeletonPrefab; // Nur Skelette in Welle 2 
+                    break;
+                case 3:
+                    prefabToSpawn = (i % 2 == 0) ? skeletonPrefab : slimePrefab; // Mix in Welle 3
+                    break;
+                case 4:
+                    prefabToSpawn = (i < 3) ? skeletonPrefab : slimePrefab; // 3 Skelette, 2 Slimes in Welle 4
+                    break;
+                default:
+                    prefabToSpawn = slimePrefab;
+                    break;
+            }
 
             // Zufällige Position im Umkreis des Bosses
             Vector2 randomDirection = Random.insideUnitCircle.normalized;
-            Vector3 spawnPosition = transform.position + new Vector3(randomDirection.x, 0, randomDirection.y) * spawnRadius;
+            Vector3 spawnPosition = transform.position + new Vector3(randomDirection.x * spawnRadius, randomDirection.y * spawnRadius, 0.5f);
 
             // Mob spawnen
             Instantiate(prefabToSpawn, spawnPosition, Quaternion.identity);
