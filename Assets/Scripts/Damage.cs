@@ -46,6 +46,7 @@ public class Damage : MonoBehaviour
         if (gameObject.CompareTag("Boss"))
         {
             UnityEngine.Object.FindFirstObjectByType<Bossbar>().UpdateBossbar(Health);
+            Debug.Log("Boss Health: " + Health);
             if (Health <= 0)
             {
                 GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
