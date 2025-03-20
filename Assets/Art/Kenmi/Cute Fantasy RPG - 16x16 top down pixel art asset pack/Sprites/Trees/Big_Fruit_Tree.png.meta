@@ -133,12 +133,12 @@ TextureImporter:
       name: Big_Fruit_Tree_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 32
+        y: 32
         width: 32
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5209971, y: 0.31380498}
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline:
@@ -164,50 +164,19 @@ TextureImporter:
       name: Big_Fruit_Tree_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
+        x: 64
+        y: 32
         width: 32
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.28125}
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
-      outline:
-      - - {x: 6, y: -22}
-        - {x: 9, y: -18}
-        - {x: 9, y: -13}
-        - {x: 8, y: -12}
-        - {x: 13, y: -10}
-        - {x: 15, y: -7}
-        - {x: 14, y: -1}
-        - {x: 12, y: 2}
-        - {x: 11, y: 4}
-        - {x: 13, y: 6}
-        - {x: 13, y: 8}
-        - {x: 12, y: 9}
-        - {x: 12, y: 12}
-        - {x: 7, y: 18}
-        - {x: 7, y: 21}
-        - {x: 2, y: 27}
-        - {x: -4, y: 26}
-        - {x: -14, y: 18}
-        - {x: -14, y: 15}
-        - {x: -16, y: 13}
-        - {x: -16, y: 8}
-        - {x: -14, y: 3}
-        - {x: -14, y: 0}
-        - {x: -16, y: -2}
-        - {x: -16, y: -7}
-        - {x: -11, y: -12}
-        - {x: -9, y: -12}
-        - {x: -9, y: -18}
-        - {x: -6, y: -22}
-        - {x: -3, y: -23}
-        - {x: 3, y: -23}
+      outline: []
       physicsShape: []
-      tessellationDetail: 0.892
+      tessellationDetail: 0
       bones: []
-      spriteID: 41daa3521be97f54e9955ee376490943
+      spriteID: 05b79d9adb0133c418f361d8bbf4b18a
       internalID: -1940922492
       vertices: []
       indices: 
@@ -217,27 +186,64 @@ TextureImporter:
       name: Big_Fruit_Tree_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 0
         y: 0
         width: 32
-        height: 64
-      alignment: 9
-      pivot: {x: 0.49097443, y: 0.37589437}
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
-      outline:
-      - - {x: 15, y: 11}
-        - {x: 8, y: 27}
-        - {x: -4, y: 27}
-        - {x: -16, y: 18}
-        - {x: -16, y: -9}
-        - {x: -11, y: -14}
-        - {x: 15, y: -14}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ba5f0ef242fbce42bcb7389a2666a72
-      internalID: -357452001
+      spriteID: bad0216d511ce9d4c8eda6041934fd59
+      internalID: -617249333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Big_Fruit_Tree_3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08532f7cbaf643040b589963fe1a965d
+      internalID: 2129454481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Big_Fruit_Tree_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c88afb11d6abb74f860e79997321267
+      internalID: 1518671879
       vertices: []
       indices: 
       edges: []
@@ -258,7 +264,9 @@ TextureImporter:
     nameFileIdTable:
       Big_Fruit_Tree_0: 843581494
       Big_Fruit_Tree_1: -1940922492
-      Big_Fruit_Tree_2: -357452001
+      Big_Fruit_Tree_2: -617249333
+      Big_Fruit_Tree_3: 2129454481
+      Big_Fruit_Tree_4: 1518671879
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

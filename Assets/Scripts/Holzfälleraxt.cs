@@ -8,7 +8,7 @@ public class Holzfälleraxt : MonoBehaviour
         {
         
         Destroy(gameObject);
-        collider.gameObject.GetComponent<HolzfällerQuest>().HolzfällerQuestErledigt();
+        collider.gameObject.GetComponent<PlayerControls>().HolzfällerQuestErledigt();
         Debug.Log("HolzfällerQuestErledigt");
         }
     }

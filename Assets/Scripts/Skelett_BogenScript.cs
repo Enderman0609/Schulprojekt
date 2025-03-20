@@ -28,7 +28,7 @@ public class Skelett_BogenScript : MonoBehaviour
 
      void Update()
     {
-        alive = GetComponent<Damage>().alive;
+        alive = GetComponent<DamageController>().alive;
         if (player == null) return;
 
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);

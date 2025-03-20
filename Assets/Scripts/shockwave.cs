@@ -15,7 +15,7 @@ public class shockwave : MonoBehaviour
 
                 if (Time.time >= lastHitTime + hitCooldown)
                 {
-                    Damage damageComponent = collider.gameObject.GetComponent<Damage>();
+                    DamageController damageComponent = collider.gameObject.GetComponent<DamageController>();
                     Debug.Log("BossAttack getroffen");
                     if (damageComponent != null)
                     {

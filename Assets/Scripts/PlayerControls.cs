@@ -6,7 +6,20 @@ using UnityEngine;
 public class PlayerControls : MonoBehaviour
 {
     public bool BogenQuestErledigt = false;
+    public float PlayerPositionX1;
+    public float PlayerPositionY1;
+    public float PlayerPositionX2;
+    public float PlayerPositionY2;
+    public float PlayerPositionX3;
+    public float PlayerPositionY3;
+    public float PlayerPositionX4;
+    public float PlayerPositionY4;
+    public float PlayerPositionX5;
+    public float PlayerPositionY5;
+    public int Raum;
+    public bool AxtQuestErledigt = false;
     private Animator animator;
+    public int PlayerHealth;
     private Transform slimeTransform;
     public Rigidbody2D PlayerRigidbody;
     public float moveSpeed;
@@ -30,10 +43,80 @@ public class PlayerControls : MonoBehaviour
     {
         PlayerRigidbody = GetComponent<Rigidbody2D>();
         swordCollider = SwordHitbox.GetComponent<Collider2D>();
+        BogenQuestErledigt = PlayerPrefs.GetInt("BogenQuestErledigt",0) == 1;
+        AxtQuestErledigt = PlayerPrefs.GetInt("AxtQuestErledigt",0) == 1;
+        Raum = PlayerPrefs.GetInt("AktuellerRaum",1);
+        PlayerPositionX1 = PlayerPrefs.GetFloat("PlayerPosition1X",0);
+        PlayerPositionY1 = PlayerPrefs.GetFloat("PlayerPosition1Y",0);
+        PlayerPositionX2 = PlayerPrefs.GetFloat("PlayerPosition2X",0);
+        PlayerPositionY2 = PlayerPrefs.GetFloat("PlayerPosition2Y",0);
+        PlayerPositionX3 = PlayerPrefs.GetFloat("PlayerPosition3X",0);
+        PlayerPositionY3 = PlayerPrefs.GetFloat("PlayerPosition3Y",0);
+        PlayerPositionX4 = PlayerPrefs.GetFloat("PlayerPosition4X",0);
+        PlayerPositionY4 = PlayerPrefs.GetFloat("PlayerPosition4Y",0);
+        PlayerPositionX5 = PlayerPrefs.GetFloat("PlayerPosition5X",0);
+        PlayerPositionY5 = PlayerPrefs.GetFloat("PlayerPosition5Y",0);
+        if (Raum == 1)
+        {
+            transform.position = new Vector2(PlayerPositionX1, PlayerPositionY1);
+        }
+        else if (Raum == 2)
+        {
+            transform.position = new Vector2(PlayerPositionX2, PlayerPositionY2);
+        }
+        else if (Raum == 3)
+        {
+            transform.position = new Vector2(PlayerPositionX3, PlayerPositionY3);
+        }
+        else if (Raum == 4)
+        {
+            transform.position = new Vector2(PlayerPositionX4, PlayerPositionY4);
+        }
+        else if (Raum == 5)
+        {
+            transform.position = new Vector2(PlayerPositionX5, PlayerPositionY5);
+        }
+
     }
 
     void Update()
     {
+        if(Raum == 1)
+        {
+            PlayerPositionX1 = (float)transform.position.x;
+            PlayerPositionY1 = (float)transform.position.y;
+            PlayerPrefs.SetFloat("PlayerPosition1X", PlayerPositionX1);
+            PlayerPrefs.SetFloat("PlayerPosition1Y", PlayerPositionY1);
+        }
+        else if(Raum == 2)
+        {
+            PlayerPositionX2 = (float)transform.position.x;
+            PlayerPositionY2 = (float)transform.position.y;
+            PlayerPrefs.SetFloat("PlayerPosition2X", PlayerPositionX2);
+            PlayerPrefs.SetFloat("PlayerPosition2Y", PlayerPositionY2);
+        }
+        else if(Raum == 3)
+        {
+            PlayerPositionX3 = (float)transform.position.x;
+            PlayerPositionY3 = (float)transform.position.y;
+            PlayerPrefs.SetFloat("PlayerPosition3X", PlayerPositionX3);
+            PlayerPrefs.SetFloat("PlayerPosition3Y", PlayerPositionY3);
+        }
+        else if(Raum == 4)
+        {
+            PlayerPositionX4 = (float)transform.position.x;
+            PlayerPositionY4 = (float)transform.position.y;
+            PlayerPrefs.SetFloat("PlayerPosition4X", PlayerPositionX4);
+            PlayerPrefs.SetFloat("PlayerPosition4Y", PlayerPositionY4);
+        }
+        else if(Raum == 5)
+        {
+            PlayerPositionX5 = (float)transform.position.x;
+            PlayerPositionY5 = (float)transform.position.y;
+            PlayerPrefs.SetFloat("PlayerPosition5X", PlayerPositionX5);
+            PlayerPrefs.SetFloat("PlayerPosition5Y", PlayerPositionY5);
+        }
+        PlayerHealth = gameObject.GetComponent<DamageController>().PlayerHealth;  
         if(Input.GetKey(KeyCode.LeftShift))
         {
            moveSpeed = 17f;
@@ -236,5 +319,9 @@ public class PlayerControls : MonoBehaviour
     public void BogenQuest()
     {
        BogenQuestErledigt = true;
+    }
+    public void HolzfällerQuestErledigt()
+    {
+        AxtQuestErledigt = true;
     }
 }

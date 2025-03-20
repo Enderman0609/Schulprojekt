@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Healthbar : MonoBehaviour
 {
-    public int Health;
+    public int PlayerHealth;
     private UnityEngine.UI.Image healthbar;
     
     private void Awake()
@@ -10,8 +10,6 @@ public class Healthbar : MonoBehaviour
         // Initialize the healthbar by getting the Image component
         healthbar = GetComponent<UnityEngine.UI.Image>();
         
-        // If the Image is on a child object, use this instead:
-        // healthbar = GetComponentInChildren<UnityEngine.UI.Image>();
     }
     
     public void UpdateHealthbar(int Health)

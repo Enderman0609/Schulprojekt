@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5445566666729193308}
   - component: {fileID: 8028948004088630823}
   - component: {fileID: 8707096475058446661}
-  - component: {fileID: 3413976624087477147}
+  - component: {fileID: 140609617100274255}
   - component: {fileID: 1777731575333400363}
   m_Layer: 3
   m_Name: Skelett_Bogen
@@ -199,7 +199,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3413976624087477147
+--- !u!114 &140609617100274255
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -208,7 +208,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4243420621271770575}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4396991cab48cd4cb04d209a3e60a6d, type: 3}
+  m_Script: {fileID: 11500000, guid: 42cadf4e7bc67c044856cc4c092b0ff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   alive: 1

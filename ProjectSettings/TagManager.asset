@@ -9,6 +9,7 @@ TagManager:
   - Gegenstand
   - Boss
   - BogenQuest
+  - Baum
   layers:
   - Default
   - TransparentFX

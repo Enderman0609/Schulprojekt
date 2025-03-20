@@ -11,6 +11,15 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Scenes/H\xF6hle.unity"
     guid: cdd22fc7ec7d9604dbede8345ee63b1b
+  - enabled: 1
+    path: Assets/Scenes/BossRaum.unity
+    guid: 2206eddcbb3602a4ca95c1bb974a675c
+  - enabled: 1
+    path: Assets/Scenes/Birkenwald.unity
+    guid: df082b9c25b3084428c19a4c82e58af0
+  - enabled: 1
+    path: Assets/Scenes/Fichtenwald.unity
+    guid: 248dc93ea7c393247925306e8bd605f5
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
