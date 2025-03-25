@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 4243420621271770575}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.8699483, y: 7.347727, z: 0.0284282}
+  m_LocalPosition: {x: 1.8699483, y: 7.347727, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -213,6 +213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alive: 1
   Health: 30
+  PlayerHealth: 0
   HealthPotion: {fileID: 61010279531495470, guid: c68a780b94109b24b8a15b58bcdd48e2, type: 3}
   PlayerRigidbody: {fileID: 0}
 --- !u!70 &1777731575333400363

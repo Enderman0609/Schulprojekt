@@ -1,24 +1,27 @@
 using UnityEngine;
 using System.Collections;
 
+// Diese Klasse steuert das Verhalten des Skelett-Bogenschützen
 public class Skelett_BogenScript : MonoBehaviour
 {
-    private Transform player;          // Neue Variable für den Schuss-Cooldown
-    public float shootCooldown;        // Cooldown-Zeit zwischen Schüssen    private bool isMoving;              // Referenz zum Spieler
-    private Rigidbody2D rb;               // Rigidbody des Skeletts
+    private Transform player;              // Referenz zum Spieler
+    public float shootCooldown;            // Cooldown-Zeit zwischen Schüssen
+    private bool isMoving;                 // Zeigt an, ob sich das Skelett bewegt
+    private Rigidbody2D rb;                // Rigidbody des Skeletts
     private Animator animator;             // Animator des Skeletts
     public float detectionRange = 14f;     // Erkennungsreichweite
     public float preferredRange = 8f;      // Bevorzugte Kampfdistanz
     public float moveSpeed = 3f;           // Bewegungsgeschwindigkeit
     private bool playerInRange = false;    // Ist der Spieler in Reichweite?
     private Vector2 movement;              // Bewegungsrichtung
-    public GameObject pfeilPrefab;        // Prefab des Pfeils
-    public float pfeilSpeed = 10f;        // Geschwindigkeit des Pfeils
-    private float nextShootTime;          // Zeitpunkt des nächsten Schusses
-    private bool canMove = true;  // Neue Variable für Bewegungskontrolle
-    public int Health;
-    public bool alive = true;
+    public GameObject pfeilPrefab;         // Prefab des Pfeils
+    public float pfeilSpeed = 10f;         // Geschwindigkeit des Pfeils
+    private float nextShootTime;           // Zeitpunkt des nächsten Schusses
+    private bool canMove = true;           // Kontrolliert, ob sich das Skelett bewegen kann
+    public int Health;                     // Gesundheit des Skeletts
+    public bool alive = true;              // Status, ob das Skelett noch lebt
 
+    // Wird beim Start aufgerufen
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -26,7 +29,8 @@ public class Skelett_BogenScript : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-     void Update()
+    // Wird jeden Frame aufgerufen
+    void Update()
     {
         alive = GetComponent<DamageController>().alive;
         if (player == null) return;
@@ -38,6 +42,7 @@ public class Skelett_BogenScript : MonoBehaviour
             playerInRange = true;
             HandleMovement(distanceToPlayer);
             
+            // Überprüft, ob es Zeit für einen neuen Schuss ist
             if (Time.time >= nextShootTime) 
             {
                 canMove = false;
@@ -55,16 +60,20 @@ public class Skelett_BogenScript : MonoBehaviour
             animator?.SetBool("isMoving", false);
         }
     }
-private IEnumerator WaitBeforeShoot()
-{
-    // Wartet für eine kurze Zeit (z.B. 0.5 Sekunden)
-    yield return new WaitForSeconds(1.6f);
-    // Führt den Schuss aus
-    if (alive == true)
+
+    // Wartet kurz, bevor der Pfeil geschossen wird (für Animation)
+    private IEnumerator WaitBeforeShoot()
     {
-        ShootArrowAnimation();
+        // Wartet für eine kurze Zeit (1.6 Sekunden)
+        yield return new WaitForSeconds(1.6f);
+        // Führt den Schuss aus, wenn das Skelett noch lebt
+        if (alive == true)
+        {
+            ShootArrowAnimation();
+        }
     }
-}
+
+    // Steuert die Bewegung des Skeletts basierend auf der Distanz zum Spieler
     private void HandleMovement(float distanceToPlayer)
     {
         if (distanceToPlayer > preferredRange && canMove && alive)
@@ -86,6 +95,7 @@ private IEnumerator WaitBeforeShoot()
         }
     }
 
+    // Wird für physikbasierte Bewegungen verwendet
     void FixedUpdate()
     {
         if (playerInRange && canMove)
@@ -110,11 +120,13 @@ private IEnumerator WaitBeforeShoot()
     {
         if (player == null) return;
         
+        // Erstellt einen neuen Pfeil
         GameObject pfeil = Instantiate(pfeilPrefab, transform.position, Quaternion.identity);
         Vector2 direction = (player.position - transform.position).normalized;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         pfeil.transform.rotation = Quaternion.Euler(0, 0, angle);
 
+        // Deaktiviert den Collider kurzzeitig, um Selbstkollisionen zu vermeiden
         Collider2D pfeilCollider = pfeil.GetComponent<Collider2D>();
         if (pfeilCollider != null)
         {
@@ -122,26 +134,35 @@ private IEnumerator WaitBeforeShoot()
             StartCoroutine(EnableColliderAfterDelay(pfeilCollider, 0.09f));
         }
         
+        // Setzt die Geschwindigkeit des Pfeils
         Rigidbody2D pfeilRb = pfeil.GetComponent<Rigidbody2D>();
         pfeilRb.linearVelocity = direction * pfeilSpeed;
         
+        // Zerstört den Pfeil nach einer bestimmten Zeit
         Destroy(pfeil, 15f / pfeilSpeed);
         //Debug.Log("Pfeil geschossen");
-        
     }
+
+    // Aktiviert den Collider des Pfeils nach einer Verzögerung
     IEnumerator EnableColliderAfterDelay(Collider2D collider, float delay)
     {
         yield return new WaitForSeconds(delay);
         collider.enabled = true;
     }
+
+    // Debug-Funktion für die Pfeilanimation
     void ShootArrowText()
     {
         //Debug.Log("Pfeil Animation");
     }
+
+    // Sperrt die Bewegung des Skeletts
     void LockMovement()
     {
         canMove = false;
     }
+
+    // Entsperrt die Bewegung des Skeletts
     void UnlockMovement()
     {
         canMove = true;

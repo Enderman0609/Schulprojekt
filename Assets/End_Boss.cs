@@ -2,96 +2,124 @@ using UnityEngine;
 
 public class End_Boss : MonoBehaviour
 {
+    // Cooldown-Zeit zwischen den Stampf-Angriffen
     public float stompCooldown = 10f;
+    // Speichert die aktuelle Welle der Gegner-Spawns
     private float Welle = 0;
+    // Aktuelle Gesundheit des Bosses
     public float BossHealth;
+    // Maximale Gesundheit des Bosses
     public float maxHealth;
+    // Prefab für die Schockwelle, die beim Stampfen erzeugt wird
     public GameObject shockwavePrefab;
+    // Wachstumsrate der Schockwelle pro Sekunde
     public float shockwaveGrowthRate = 5f;
+    // Maximale Größe der Schockwelle
     public float shockwaveMaxSize = 10f;
+    // Dauer der Stampf-Animation
     public float stompAnimationDuration = 1f;
+    // Zeitpunkt für den nächsten Stampf-Angriff
     private float nextStompTime;
+    // Gibt an, ob der Boss gerade stampft
     private bool isStomping = false;
+    // Referenz auf die aktuelle Schockwelle
     private GameObject currentShockwave;
+    // Referenz auf die Animator-Komponente
     private Animator animator;
-    public GameObject skeletonPrefab; // Das Skelett-Prefab
-    public GameObject slimePrefab; // Das Slime-Prefab
-    public float spawnRadius = 5f; // Radius um den Boss, in dem Mobs spawnen
+    // Prefab für Skelett-Gegner
+    public GameObject skeletonPrefab;
+    // Prefab für Schleim-Gegner
+    public GameObject slimePrefab;
+    // Radius um den Boss, in dem Gegner spawnen
+    public float spawnRadius = 5f;
+    // Maximale Anzahl von Gegnern pro Welle
     public int maxMobsPerWave = 1; 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    // Initialisierung beim Start
     void Start()
     {
+        // Setzt den Zeitpunkt für den ersten Stampf-Angriff
         nextStompTime = Time.time + stompCooldown;
+        // Holt die Animator-Komponente
         animator = GetComponent<Animator>();
+        // Speichert die maximale Gesundheit des Bosses
         maxHealth = gameObject.GetComponent<DamageController>().Health;
     }
+
+    // Wird jeden Frame aufgerufen
     void Update()
     {
-    BossHealth = gameObject.GetComponent<DamageController>().Health;    // Prüfen, ob es Zeit für einen neuen Stampf-Angriff ist
-    if (Time.time >= nextStompTime && !isStomping)
+        // Aktualisiert die aktuelle Gesundheit des Bosses
+        BossHealth = gameObject.GetComponent<DamageController>().Health;
+        
+        // Prüft, ob es Zeit für einen neuen Stampf-Angriff ist
+        if (Time.time >= nextStompTime && !isStomping)
         {
             StartStomp();
         }
-    if (BossHealth <= 1000 && Welle == 0)
-            {
-                SpawnMobs();
-                Debug.Log("Welle 1");
-                Welle = 1;
-            }
-    if (BossHealth <= 700 && Welle == 1)
-            {
-                SpawnMobs();
-                Debug.Log("Welle 2");
-                Welle = 2;
-            }
-    if (BossHealth <= 500 && Welle == 2)
-            {
-                SpawnMobs();
-                Debug.Log("Welle 3");
-                Welle = 3;
-            }
-    if (BossHealth <= 300 && Welle == 3)
-            {
-                SpawnMobs();
-                Debug.Log("Welle 4");
-                Welle = 4;
-            }
+        
+        // Spawnt Gegner basierend auf der Gesundheit des Bosses
+        if (BossHealth <= 1000 && Welle == 0)
+        {
+            SpawnMobs();
+            Debug.Log("Welle 1");
+            Welle = 1;
+        }
+        if (BossHealth <= 700 && Welle == 1)
+        {
+            SpawnMobs();
+            Debug.Log("Welle 2");
+            Welle = 2;
+        }
+        if (BossHealth <= 500 && Welle == 2)
+        {
+            SpawnMobs();
+            Debug.Log("Welle 3");
+            Welle = 3;
+        }
+        if (BossHealth <= 300 && Welle == 3)
+        {
+            SpawnMobs();
+            Debug.Log("Welle 4");
+            Welle = 4;
+        }
 
-            
-
-
-        // Wenn eine aktive Schockwelle existiert, diese vergrößern
+        // Vergrößert die aktive Schockwelle, falls vorhanden
         if (currentShockwave != null)
         {
             GrowShockwave();
         }
     }
 
+    // Startet den Stampf-Angriff und die Animation
     void StartStomp()
     {
         isStomping = true;
         animator.SetTrigger("Stomp");
     }
 
+    // Erzeugt eine neue Schockwelle
     void CreateShockwave()
     {
-        // Schockwelle am Boden erzeugen
+        // Berechnet die Position für die Schockwelle
         Debug.Log(transform.position);
         Vector3 spawnPosition = transform.position;
         spawnPosition.y += 1.5f;
 
+        // Instanziiert die Schockwelle
         currentShockwave = Instantiate(shockwavePrefab, spawnPosition, Quaternion.identity);
 
-        // Cooldown für nächsten Stampf setzen
+        // Setzt den Cooldown für den nächsten Stampf
         nextStompTime = Time.time + stompCooldown;
     }
 
+    // Vergrößert die aktuelle Schockwelle
     void GrowShockwave()
     {
-        // Schockwelle vergrößern
+        // Erhöht die Größe der Schockwelle
         currentShockwave.transform.localScale += new Vector3(1, 0, 1) * shockwaveGrowthRate * Time.deltaTime;
 
-        // Schockwelle löschen, wenn Maximalgröße erreicht
+        // Zerstört die Schockwelle, wenn sie die maximale Größe erreicht hat
         if (currentShockwave.transform.localScale.x >= shockwaveMaxSize)
         {
             Destroy(currentShockwave);
@@ -99,9 +127,11 @@ public class End_Boss : MonoBehaviour
             isStomping = false;
         }
     }
+
+    // Spawnt Gegner basierend auf der aktuellen Welle
     void SpawnMobs()
     {
-        // Anzahl der zu spawnenden Mobs basierend auf der Welle
+        // Bestimmt die Anzahl der zu spawnenden Gegner je nach Welle
         int mobsToSpawn;
         switch (Welle)
         {
@@ -122,11 +152,10 @@ public class End_Boss : MonoBehaviour
                 break;
         }
 
-
-
-
+        // Spawnt die festgelegte Anzahl von Gegnern
         for (int i = 0; i < mobsToSpawn; i++)
         {
+            // Wählt das zu spawnende Prefab basierend auf der Welle
             GameObject prefabToSpawn;
             switch (Welle)
             {
@@ -147,11 +176,11 @@ public class End_Boss : MonoBehaviour
                     break;
             }
 
-            // Zufällige Position im Umkreis des Bosses
+            // Berechnet eine zufällige Position im Umkreis des Bosses
             Vector2 randomDirection = Random.insideUnitCircle.normalized;
-            Vector3 spawnPosition = transform.position + new Vector3(randomDirection.x * spawnRadius, randomDirection.y * spawnRadius, 0.5f);
+            Vector3 spawnPosition = transform.position + new Vector3(randomDirection.x * spawnRadius, randomDirection.y * spawnRadius, -0.5f);
 
-            // Mob spawnen
+            // Instanziiert den Gegner an der berechneten Position
             Instantiate(prefabToSpawn, spawnPosition, Quaternion.identity);
         }
     }

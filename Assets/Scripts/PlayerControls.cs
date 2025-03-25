@@ -5,7 +5,11 @@ using UnityEngine;
 
 public class PlayerControls : MonoBehaviour
 {
+    // Quest-Status
     public bool BogenQuestErledigt = false;
+    public bool AxtQuestErledigt = false;
+    
+    // Spielerposition für verschiedene Räume
     public float PlayerPositionX1;
     public float PlayerPositionY1;
     public float PlayerPositionX2;
@@ -16,15 +20,22 @@ public class PlayerControls : MonoBehaviour
     public float PlayerPositionY4;
     public float PlayerPositionX5;
     public float PlayerPositionY5;
+    
+    // Aktueller Raum
     public int Raum;
-    public bool AxtQuestErledigt = false;
+    
+    // Komponenten
     private Animator animator;
     public int PlayerHealth;
     private Transform slimeTransform;
     public Rigidbody2D PlayerRigidbody;
+    
+    // Bewegungsvariablen
     public float moveSpeed;
     float speedX, speedY;
     private bool isMoving;
+    
+    // Kampfvariablen
     private bool BowAttack;
     bool canMove = true;
     private float holdTime = 0;
@@ -35,17 +46,26 @@ public class PlayerControls : MonoBehaviour
     public LayerMask enemyLayer;
     public GameObject SwordHitbox;
     Collider2D swordCollider;
+    private bool canShoot = true;
+    
+    // Initialisierung der Komponenten
     private void Awake()
     {
         animator = GetComponent<Animator>();
     }
+    
+    // Wird beim Start aufgerufen
     void Start()
     {
         PlayerRigidbody = GetComponent<Rigidbody2D>();
         swordCollider = SwordHitbox.GetComponent<Collider2D>();
+        
+        // Lade gespeicherte Daten
         BogenQuestErledigt = PlayerPrefs.GetInt("BogenQuestErledigt",0) == 1;
         AxtQuestErledigt = PlayerPrefs.GetInt("AxtQuestErledigt",0) == 1;
         Raum = PlayerPrefs.GetInt("AktuellerRaum",1);
+        
+        // Lade Spielerpositionen für jeden Raum
         PlayerPositionX1 = PlayerPrefs.GetFloat("PlayerPosition1X",0);
         PlayerPositionY1 = PlayerPrefs.GetFloat("PlayerPosition1Y",0);
         PlayerPositionX2 = PlayerPrefs.GetFloat("PlayerPosition2X",0);
@@ -56,6 +76,8 @@ public class PlayerControls : MonoBehaviour
         PlayerPositionY4 = PlayerPrefs.GetFloat("PlayerPosition4Y",0);
         PlayerPositionX5 = PlayerPrefs.GetFloat("PlayerPosition5X",0);
         PlayerPositionY5 = PlayerPrefs.GetFloat("PlayerPosition5Y",0);
+        
+        // Setze Spielerposition basierend auf aktuellem Raum
         if (Raum == 1)
         {
             transform.position = new Vector2(PlayerPositionX1, PlayerPositionY1);
@@ -79,8 +101,10 @@ public class PlayerControls : MonoBehaviour
 
     }
 
+    // Wird jeden Frame aufgerufen
     void Update()
     {
+        // Speichere aktuelle Position je nach Raum
         if(Raum == 1)
         {
             PlayerPositionX1 = (float)transform.position.x;
@@ -116,7 +140,11 @@ public class PlayerControls : MonoBehaviour
             PlayerPrefs.SetFloat("PlayerPosition5X", PlayerPositionX5);
             PlayerPrefs.SetFloat("PlayerPosition5Y", PlayerPositionY5);
         }
+        
+        // Aktualisiere Spielergesundheit
         PlayerHealth = gameObject.GetComponent<DamageController>().PlayerHealth;  
+        
+        // Sprint-Funktion
         if(Input.GetKey(KeyCode.LeftShift))
         {
            moveSpeed = 17f;
@@ -125,6 +153,8 @@ public class PlayerControls : MonoBehaviour
         {
             moveSpeed = 10;
         }
+        
+        // Bewegungssteuerung
         if (canMove)
         {
             speedX = Input.GetAxis("Horizontal");
@@ -132,6 +162,7 @@ public class PlayerControls : MonoBehaviour
             Vector2 moveDirection = new Vector2(speedX * moveSpeed, speedY * moveSpeed);
             PlayerRigidbody.linearVelocity += moveDirection * Time.deltaTime;
 
+            // Aktualisiere Animations-Parameter
             if (isMoving = speedX != 0 || speedY != 0)
             {
                 animator.SetFloat("moveX", speedX);
@@ -139,11 +170,14 @@ public class PlayerControls : MonoBehaviour
             }
             animator.SetBool("isMoving", isMoving);
         }
+        
+        // Schwertangriff
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             animator.SetTrigger("Swordattack");
         }
 
+        // Bestimme Blickrichtung basierend auf Bewegung
         if (Mathf.Abs(speedX) < Mathf.Abs(speedY))
         {
             if (speedY > 0)
@@ -174,6 +208,8 @@ public class PlayerControls : MonoBehaviour
                 gameObject.BroadcastMessage("FacingRight", true);
             }
         }
+        
+        // Bogenangriff
         if (Input.GetMouseButton(1) && BogenQuestErledigt)
         {
             holdTime += Time.deltaTime;
@@ -223,6 +259,7 @@ public class PlayerControls : MonoBehaviour
             
             animator.SetBool("BowAttack", BowAttack);
             
+            // Schieße Pfeil nach Halten der Taste
             if (holdTime >= HOLD_TIME_LIMIT)
             {
                 ShootArrowAnimation();
@@ -237,17 +274,24 @@ public class PlayerControls : MonoBehaviour
             UnlockMovement();
             animator.SetBool("BowAttack", false);
         }
+        
+        // Aktualisiere nächsten Gegner
         FindNearestEnemy();
-
     }
+    
+    // Sperrt Spielerbewegung
     void LockMovement()
     {
         canMove = false;
     }
+    
+    // Entsperrt Spielerbewegung
     void UnlockMovement()
     {
         canMove = true;
     }
+    
+    // Findet den nächsten Gegner in Reichweite
     private void FindNearestEnemy()
     {
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, detectionRange, enemyLayer);
@@ -266,9 +310,8 @@ public class PlayerControls : MonoBehaviour
 
         nearestEnemy = nearestEnemyFound;
     }
-    // Neue Methode, um kurzzeitig das Schießen zu deaktivieren
-    private bool canShoot = true;
     
+    // Deaktiviert kurzzeitig das Schießen
     IEnumerator DisableShootingBriefly()
     {
         canShoot = false;
@@ -276,6 +319,7 @@ public class PlayerControls : MonoBehaviour
         canShoot = true;
     }
     
+    // Führt Pfeilschuss-Animation aus
     void ShootArrowAnimation()
     {
         // Nur schießen, wenn ein Gegner in Reichweite ist und Schießen erlaubt ist
@@ -288,10 +332,12 @@ public class PlayerControls : MonoBehaviour
             return; // Frühzeitig beenden
         }
 
+        // Erstelle Pfeil und richte ihn zum Gegner aus
         GameObject pfeil = Instantiate(pfeilPrefab, transform.position, Quaternion.identity);
         Vector2 direction = (nearestEnemy.position - transform.position).normalized;
         Debug.Log("Schieße auf Gegner: " + nearestEnemy.name);
 
+        // Rotiere Pfeil in Richtung des Gegners
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         pfeil.transform.rotation = Quaternion.Euler(0, 0, angle);
 
@@ -303,6 +349,7 @@ public class PlayerControls : MonoBehaviour
             pfeilRb.linearVelocity = direction * arrowSpeed;
         }
 
+        // Aktiviere Collider nach kurzer Verzögerung
         Collider2D pfeilCollider = pfeil.GetComponent<Collider2D>();
         if (pfeilCollider != null)
         {
@@ -310,16 +357,21 @@ public class PlayerControls : MonoBehaviour
             StartCoroutine(EnableColliderAfterDelay(pfeilCollider, 0.09f)); 
         }
     }
+    
+    // Aktiviert Collider nach Verzögerung
     IEnumerator EnableColliderAfterDelay(Collider2D collider, float delay)
     {
         yield return new WaitForSeconds(delay);
         collider.enabled = true;
     }
 
+    // Markiert Bogen-Quest als erledigt
     public void BogenQuest()
     {
        BogenQuestErledigt = true;
     }
+    
+    // Markiert Holzfäller-Quest als erledigt
     public void HolzfällerQuestErledigt()
     {
         AxtQuestErledigt = true;

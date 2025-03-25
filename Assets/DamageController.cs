@@ -1,19 +1,24 @@
 using UnityEngine;
 public class DamageController : MonoBehaviour
 {
+    // Schadensparameter
     private int damage;
     private int knockbackForce;
     private Animator animator;
     public bool alive = true;
-    public int Health;
-    public int PlayerHealth;
-    public GameObject HealthPotion;
-    public Rigidbody2D PlayerRigidbody;
+    public int Health; // Gesundheit des Objekts
+    public int PlayerHealth; // Gesundheit des Spielers
+    public GameObject HealthPotion; // Referenz auf das Heiltrank-Prefab
+    public Rigidbody2D PlayerRigidbody; // Referenz auf die Physikkomponente des Spielers
+
+    // Initialisierung der Komponenten
     private void Awake()
     {
         animator = GetComponent<Animator>();
         PlayerRigidbody = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
     }
+
+    // Lädt die Spielergesundheit aus den gespeicherten Daten
     void Start()
     {
         PlayerHealth = PlayerPrefs.GetInt("PlayerHealth", 120);
@@ -21,6 +26,7 @@ public class DamageController : MonoBehaviour
         UnityEngine.Object.FindFirstObjectByType<Healthbar>().UpdateHealthbar(PlayerHealth);
     }
 
+    // Verarbeitet Schadenszufügung für verschiedene Entitäten (Feind, Spieler, Boss)
     public void DealDamage(int damage)
     {
         
@@ -32,6 +38,7 @@ public class DamageController : MonoBehaviour
                 GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
                 animator.SetTrigger("death");
                 alive = false;
+                // 10% Chance einen Heiltrank fallen zu lassen
                 float randomChance = Random.Range(0f, 1f);
                 if (randomChance <= 0.1f)
                 {
@@ -64,6 +71,8 @@ public class DamageController : MonoBehaviour
             }
         }
     }
+
+    // Wendet Rückstoßkraft auf Feinde an, wenn sie getroffen werden
     public void KnockbackEnemy(int knockbackForce)
     {
         Rigidbody2D enemyRb = GetComponent<Rigidbody2D>();
@@ -77,6 +86,8 @@ public class DamageController : MonoBehaviour
             Debug.Log("KnockbackEnemy");
         }
     }
+
+    // Wendet Rückstoßkraft auf den Spieler an, wenn er getroffen wird
     public void KnockbackPlayer(int knockbackForce, Transform enemy)
     {
         if (gameObject.CompareTag("Player"))
@@ -90,6 +101,8 @@ public class DamageController : MonoBehaviour
             Debug.Log("appliedForce: " + appliedForce);
         }
     }
+
+    // Wendet Rückstoßkraft auf Feinde an, wenn sie mit anderen Objekten kollidieren
     public void KnockbackBothEnemy(int knockbackForce, Transform enemy)
     {
         if (gameObject.CompareTag("Enemy") && (enemy != null))
@@ -104,6 +117,8 @@ public class DamageController : MonoBehaviour
             Debug.Log("appliedForce: " + appliedForce);
         }
     }
+
+    // Entfernt das Objekt aus der Szene
     private void DestroyEntity()
     {
         Destroy(gameObject);
